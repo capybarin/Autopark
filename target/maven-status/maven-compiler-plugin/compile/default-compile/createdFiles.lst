@@ -1,2 +1,3 @@
+com\autopark\app\entities\User.class
 com\autopark\app\servlets\AddServlet.class
 com\autopark\app\servlets\ListServlet.class
