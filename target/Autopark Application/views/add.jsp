@@ -5,7 +5,7 @@
   Time: 12:31
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <html>
 <head>
     <title>Add</title>
@@ -13,7 +13,7 @@
 </head>
 <body class="w3-light-grey">
 <div class="w3-container w3-blue-grey w3-opacity w3-right-align">
-    <h1>Add</h1>
+    <h1>Motor pool application</h1>
 </div>
 
 <div class="w3-container w3-padding">
