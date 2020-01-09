@@ -25,6 +25,8 @@ public class Login extends HttpServlet {
         requestDispatcher.forward(req, resp);
     }
 
+    //TODO: на основе роли отправлять на разные версии одной и той же страницы
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         BasicConfigurator.configure();
@@ -43,12 +45,16 @@ public class Login extends HttpServlet {
         try {
             List<User> users = model.getUserList();
             for (User user: users) {
+                log.info("Проход по списку");
                 if (user.getPassword().equals(pass) && user.getName().equals(name)){
+                    log.info("Логин прошел успешно");
                     if (user.getRole().equals("U")){
+                        log.info("Даю роль юзера");
                         req.setAttribute("userName", user.getName());
                         req.setAttribute("role", user.getRole());
                     }
                     if (user.getRole().equals("A")){
+                        log.info("Даю роль админа");
                         req.setAttribute("userName", user.getName());
                         req.setAttribute("role", user.getRole());
                     }

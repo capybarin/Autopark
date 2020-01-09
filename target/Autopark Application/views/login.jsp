@@ -18,11 +18,11 @@
 </div>
 <div class="w3-container w3-padding">
     <%
-        if (request.getAttribute("name") != null && request.getAttribute("role") != null) {
+        if (request.getAttribute("userName") != null) {
             out.println("<div class=\"w3-panel w3-green w3-display-container w3-card-4 w3-round\">\n" +
                     "   <span onclick=\"this.parentElement.style.display='none'\"\n" +
                     "   class=\"w3-button w3-margin-right w3-display-right w3-round-large w3-hover-green w3-border w3-border-green w3-hover-border-grey\">×</span>\n" +
-                    "   <h5>Hello '" + request.getAttribute("name") + " " + "' your role is" + request.getAttribute("role") + "</h5>\n" +
+                    "   <h5>Hello, " + request.getAttribute("userName") + "!</h5>\n" +
                     "</div>");
         }
     %>
