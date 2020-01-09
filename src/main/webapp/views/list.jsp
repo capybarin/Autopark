@@ -23,25 +23,28 @@
             <h2>Users</h2>
         </div>
         <%
-            List<String> names = (List<String>) request.getAttribute("userNames");
-            List<String> surnames = (List<String>) request.getAttribute("userSurnames");
-            Iterator<String> nameIter = names.iterator();
-            Iterator<String> surnameIter = surnames.iterator();
+            try {
+                List<String> names = (List<String>) request.getAttribute("userNames");
+                List<String> surnames = (List<String>) request.getAttribute("userSurnames");
+                Iterator<String> nameIter = names.iterator();
+                Iterator<String> surnameIter = surnames.iterator();
 
-            if (names != null && !names.isEmpty() && surnames != null && !surnames.isEmpty()) {
-                out.println("<ul class=\"w3-ul\">");
-                while(nameIter.hasNext() && surnameIter.hasNext())
-                {
-                    out.print("<li class=\"w3-hover-sand\">" + nameIter.next() + " " + surnameIter.next() + "</li>");
-                }
-                out.println("</ul>");
+                if (names != null && !names.isEmpty() && surnames != null && !surnames.isEmpty()) {
+                    out.println("<ul class=\"w3-ul\">");
+                    while (nameIter.hasNext() && surnameIter.hasNext()) {
+                        out.print("<li class=\"w3-hover-sand\">" + nameIter.next() + " " + surnameIter.next() + "</li>");
+                    }
+                    out.println("</ul>");
 
-            } else out.println("<div class=\"w3-panel w3-red w3-display-container w3-card-4 w3-round\">\n"
-                    +
-                    "   <span onclick=\"this.parentElement.style.display='none'\"\n" +
-                    "   class=\"w3-button w3-margin-right w3-display-right w3-round-large w3-hover-red w3-border w3-border-red w3-hover-border-grey\">×</span>\n" +
-                    "   <h5>There are no users yet!</h5>\n" +
-                    "</div>");
+                } else out.println("<div class=\"w3-panel w3-red w3-display-container w3-card-4 w3-round\">\n"
+                        +
+                        "   <span onclick=\"this.parentElement.style.display='none'\"\n" +
+                        "   class=\"w3-button w3-margin-right w3-display-right w3-round-large w3-hover-red w3-border w3-border-red w3-hover-border-grey\">×</span>\n" +
+                        "   <h5>There are no users yet!</h5>\n" +
+                        "</div>");
+            } catch (Exception e){
+                out.print("Error");
+            }
         %>
     </div>
 </div>

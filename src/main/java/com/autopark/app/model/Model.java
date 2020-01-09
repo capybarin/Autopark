@@ -60,8 +60,4 @@ public class Model {
         }
     }
 
-    public void prepareDrivers(){
-        userList.clear();
-    }
-
 }

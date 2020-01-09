@@ -5,14 +5,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          metadata-complete="false">
-
-
-    <listener>
-        <listener-class>com.autopark.app.servlets.AddServlet</listener-class>
-    </listener>
-
-
-    <!-- add servlet -->
     <servlet>
         <servlet-name>add</servlet-name>
         <servlet-class>com.autopark.app.servlets.AddServlet</servlet-class>
@@ -22,17 +14,13 @@
         <url-pattern>/add</url-pattern>
     </servlet-mapping>
 
-    <!-- list servlet -->
+
     <servlet>
         <servlet-name>list</servlet-name>
         <servlet-class>com.autopark.app.servlets.ListServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>list</servlet-name>
         <url-pattern>/list</url-pattern>
     </servlet-mapping>
-
-
-
 </web-app>
