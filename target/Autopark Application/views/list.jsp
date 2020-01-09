@@ -1,4 +1,5 @@
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Iterator" %><%--
   Created by IntelliJ IDEA.
   User: vlad
   Date: 08.01.2020
@@ -23,11 +24,16 @@
         </div>
         <%
             List<String> names = (List<String>) request.getAttribute("userNames");
+            List<String> surnames = (List<String>) request.getAttribute("userSurnames");
 
-            if (names != null && !names.isEmpty()) {
+            Iterator<String> nameIter = names.iterator();
+            Iterator<String> surnameIter = surnames.iterator();
+
+            if (names != null && !names.isEmpty() && surnames != null && !surnames.isEmpty()) {
                 out.println("<ul class=\"w3-ul\">");
-                for (String s : names) {
-                    out.println("<li class=\"w3-hover-sand\">" + s + "</li>");
+                while(nameIter.hasNext() && surnameIter.hasNext())
+                {
+                    out.print("<li class=\"w3-hover-sand\">" + nameIter.next() + " " + surnameIter.next() + "</li>");
                 }
                 out.println("</ul>");
 

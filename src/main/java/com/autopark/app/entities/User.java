@@ -3,6 +3,7 @@ package com.autopark.app.entities;
 import java.util.Objects;
 
 public class User {
+    private int id;
     private String name;
     private String password;
     private String surname;
@@ -15,6 +16,15 @@ public class User {
         this.password = password;
         this.role = "U";
         this.activity = "free";
+    }
+
+    public User(int id, String name, String password, String surname, String role, String activity) {
+        this.id = id;
+        this.name = name;
+        this.password = password;
+        this.surname = surname;
+        this.role = role;
+        this.activity = activity;
     }
 
     public String getName() {
