@@ -7,15 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5087e897-faa0-42bb-a4fa-2f203a431ecd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/model/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/add.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Autopark Application/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark Application/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark Application/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark Application/views/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Autopark Application/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Autopark Application/views/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark Application/views/add.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,8 +42,8 @@
       <list>
         <option value="HTML File" />
         <option value="Kotlin File" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -178,7 +178,7 @@
       <workItem from="1578506164553" duration="5793000" />
       <workItem from="1578512821196" duration="205000" />
       <workItem from="1578527784075" duration="4407000" />
-      <workItem from="1578566681730" duration="15245000" />
+      <workItem from="1578566681730" duration="19879000" />
     </task>
     <task id="LOCAL-00001" summary="Model class created">
       <created>1578484710726</created>
@@ -236,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578577052706</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Login page added">
+      <created>1578581953152</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1578581953152</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,6 +274,7 @@
     <MESSAGE value="More models are created. Preparing for jbdc connect" />
     <MESSAGE value="Test connector created" />
     <MESSAGE value="Insert statement doesnt work" />
-    <option name="LAST_COMMIT_MESSAGE" value="Insert statement doesnt work" />
+    <MESSAGE value="Login page added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login page added" />
   </component>
 </project>
