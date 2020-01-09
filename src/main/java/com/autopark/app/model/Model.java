@@ -22,7 +22,19 @@ public class Model {
         model.add(user);
     }
 
-    public List<String> list(){
+    public List<String> getNames(){
         return model.stream().map(User::getName).collect(Collectors.toList());
+    }
+
+    public List<String> getSurnames(){
+        return model.stream().map(User::getSurname).collect(Collectors.toList());
+    }
+
+    public List<String> getRoles(){
+        return model.stream().map(User::getRole).collect(Collectors.toList());
+    }
+
+    public List<String> getActivities(){
+        return model.stream().map(User::getActivity).collect(Collectors.toList());
     }
 }

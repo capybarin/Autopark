@@ -15,8 +15,11 @@ public class ListServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         Model model = Model.getInstance();
-        List<String> names = model.list();
+        List<String> names = model.getNames();
+        List<String> surnames = model.getSurnames();
         req.setAttribute("userNames", names);
+        req.setAttribute("userSurnames", surnames);
+
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/list.jsp");
         requestDispatcher.forward(req, resp);
