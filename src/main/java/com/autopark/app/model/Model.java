@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class Model {
     private static Model instance = new Model();
-    private Connection connection;
+    //private Connection connection;
     private List<User> model;
 
 
