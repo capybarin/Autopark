@@ -7,6 +7,10 @@
          metadata-complete="false">
 
 
+    <listener>
+        <listener-class>com.autopark.app.servlets.AddServlet</listener-class>
+    </listener>
+
 
     <!-- add servlet -->
     <servlet>

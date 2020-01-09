@@ -25,7 +25,6 @@
         <%
             List<String> names = (List<String>) request.getAttribute("userNames");
             List<String> surnames = (List<String>) request.getAttribute("userSurnames");
-
             Iterator<String> nameIter = names.iterator();
             Iterator<String> surnameIter = surnames.iterator();
 

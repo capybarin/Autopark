@@ -6,21 +6,41 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5087e897-faa0-42bb-a4fa-2f203a431ecd" name="Default Changelist" comment="More models are created. Preparing for jbdc connect">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/model/JdbcConnector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/resources/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Autopark_Application_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Autopark_Application_war_exploded.xml" afterDir="false" />
+    <list default="true" id="5087e897-faa0-42bb-a4fa-2f203a431ecd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Autopark Application.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Autopark Application.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/model/JdbcConnector.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/AddServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/AddServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/ListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/ListServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Autopark Application/WEB-INF/classes/com/autopark/app/servlets/AddServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark Application/WEB-INF/classes/com/autopark/app/servlets/AddServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Autopark Application/WEB-INF/classes/com/autopark/app/servlets/ListServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark Application/WEB-INF/classes/com/autopark/app/servlets/ListServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Autopark Application/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark Application/views/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/autopark/app/servlets/AddServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/autopark/app/servlets/AddServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/autopark/app/servlets/ListServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/autopark/app/servlets/ListServlet.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -55,6 +75,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vlad\Desktop\Autopark\src\main\java\resources" />
+      <recent name="C:\Users\vlad\Desktop\Autopark\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\vlad\Desktop\customerapplication-master\src\main\webapp\views" />
       <recent name="C:\Users\vlad\Desktop\customerapplication-master\src\main\webapp" />
     </key>
@@ -161,7 +183,7 @@
       <workItem from="1578506164553" duration="5793000" />
       <workItem from="1578512821196" duration="205000" />
       <workItem from="1578527784075" duration="4407000" />
-      <workItem from="1578566681730" duration="2227000" />
+      <workItem from="1578566681730" duration="10200000" />
     </task>
     <task id="LOCAL-00001" summary="Model class created">
       <created>1578484710726</created>
@@ -205,11 +227,21 @@
       <option name="project" value="LOCAL" />
       <updated>1578531251983</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Test connector created">
+      <created>1578568940995</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1578568940995</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.log" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -231,6 +263,7 @@
     <MESSAGE value="Some renames" />
     <MESSAGE value="Some output improvements" />
     <MESSAGE value="More models are created. Preparing for jbdc connect" />
-    <option name="LAST_COMMIT_MESSAGE" value="More models are created. Preparing for jbdc connect" />
+    <MESSAGE value="Test connector created" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test connector created" />
   </component>
 </project>

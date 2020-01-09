@@ -3,6 +3,7 @@ package com.autopark.app.servlets;
 
 import com.autopark.app.entities.User;
 import com.autopark.app.model.Model;
+import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,8 +11,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class AddServlet extends HttpServlet {
+
+    private static final Logger log = Logger.getLogger(AddServlet.class);
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
@@ -25,8 +30,14 @@ public class AddServlet extends HttpServlet {
         String name = req.getParameter("name");
         String surname = req.getParameter("surname");
         String pass = req.getParameter("pass");
-        User user = new User(name, surname, pass);
-        Model model = Model.getInstance();
+        User user = new User(name, surname,"U","free", pass);
+        Model model = null;
+        try {
+            model = Model.getInstance();
+        } catch (SQLException e) {
+            log.error("AddServlet error occurred: unable to get instance ", e);
+        }
+        log.info("Интсанс создан, иду делать запрос");
         model.addUser(user);
 
         req.setAttribute("userName", name);
