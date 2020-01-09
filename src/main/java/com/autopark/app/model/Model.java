@@ -2,14 +2,11 @@ package com.autopark.app.model;
 
 import com.autopark.app.entities.User;
 import org.apache.log4j.Logger;
+import org.apache.log4j.BasicConfigurator;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Model {
     private static Model instance;
@@ -18,7 +15,6 @@ public class Model {
     private String url = "jdbc:mysql://localhost:3306/motorpoll?serverTimezone=UTC";
     private String username = "root";
     private String password = "qwerty";
-    private List<User> userList;
 
 
     private Model() throws SQLException {
@@ -54,14 +50,13 @@ public class Model {
     }
 
     public void addUser(User user){
-        try{
-            String sql = "insert into users (Name, Surname, Role, Activity, Password) values ('TestName', 'TestSurname', 'U', 'free', 'qwerty')";
-            connection.createStatement().executeQuery(sql);
-            //connection.createStatement().executeQuery("INSERT INTO users (Name, Surname, Role, Activity, Password)" +
-            //        "VALUES ('"+user.getName()+"','"+user.getSurname()+"','"+user.getRole()+"','"+user.getActivity()+
-            //        "','"+user.getPassword()+"');");
-        } catch (SQLException e) {
-            log.error("Model class occurred: unable to execute insert statement (user table)");
+        log.info("Creating a user");
+        String sql = "insert into users (Name_, Surname, Role, Activity, Password) " +
+                "values ('"+user.getName()+"','"+user.getSurname()+"','"+user.getRole()+"','"+user.getActivity()+"','"+user.getPassword()+"')";
+        try {
+            connection.createStatement().execute(sql);
+        }catch (SQLException e){
+            log.error(e);
         }
     }
 
@@ -69,23 +64,4 @@ public class Model {
         userList.clear();
     }
 
-    /*public void addUser(User user){
-        model.add(user);
-    }
-
-    public List<String> getNames(){
-        return model.stream().map(User::getName).collect(Collectors.toList());
-    }
-
-    public List<String> getSurnames(){
-        return model.stream().map(User::getSurname).collect(Collectors.toList());
-    }
-
-    public List<String> getRoles(){
-        return model.stream().map(User::getRole).collect(Collectors.toList());
-    }
-
-    public List<String> getActivities(){
-        return model.stream().map(User::getActivity).collect(Collectors.toList());
-    }*/
 }
