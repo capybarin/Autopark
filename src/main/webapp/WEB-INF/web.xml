@@ -5,6 +5,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          metadata-complete="false">
+
+
     <servlet>
         <servlet-name>add</servlet-name>
         <servlet-class>com.autopark.app.servlets.AddServlet</servlet-class>
@@ -12,6 +14,16 @@
     <servlet-mapping>
         <servlet-name>add</servlet-name>
         <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>page</servlet-name>
+        <servlet-class>com.autopark.app.servlets.RouteListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>page</servlet-name>
+        <url-pattern>/userPage</url-pattern>
     </servlet-mapping>
 
 
@@ -27,7 +39,7 @@
 
     <servlet>
         <servlet-name>login</servlet-name>
-        <servlet-class>com.autopark.app.servlets.Login</servlet-class>
+        <servlet-class>com.autopark.app.servlets.LoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>login</servlet-name>

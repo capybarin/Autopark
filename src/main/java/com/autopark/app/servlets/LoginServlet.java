@@ -14,8 +14,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-public class Login extends HttpServlet {
-    private static final Logger log = Logger.getLogger(Login.class);
+public class LoginServlet extends HttpServlet {
+    private static final Logger log = Logger.getLogger(LoginServlet.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

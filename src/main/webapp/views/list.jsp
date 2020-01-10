@@ -43,7 +43,7 @@
                         "   <h5>There are no users yet!</h5>\n" +
                         "</div>");
             } catch (Exception e){
-                out.print("Error");
+                out.println("<p><img src="+"images/error.png"+" alt="+"Error"+"></p>");
             }
         %>
     </div>

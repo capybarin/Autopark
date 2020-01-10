@@ -1,5 +1,6 @@
 package com.autopark.app.model;
 
+import com.autopark.app.entities.Route;
 import com.autopark.app.entities.User;
 import org.apache.log4j.Logger;
 import org.apache.log4j.BasicConfigurator;
@@ -40,6 +41,7 @@ public class Model {
     }
 
     public ArrayList<User> getUserList() throws SQLException {
+        log.info("Retrieving user list");
         ArrayList<User> userList = new ArrayList<>();
         ResultSet users = connection.createStatement().executeQuery("SELECT * FROM users");
         while (users.next()){
@@ -53,6 +55,26 @@ public class Model {
         log.info("Creating a user");
         String sql = "insert into users (Name_, Surname, Role, Activity, Password) " +
                 "values ('"+user.getName()+"','"+user.getSurname()+"','"+user.getRole()+"','"+user.getActivity()+"','"+user.getPassword()+"')";
+        try {
+            connection.createStatement().execute(sql);
+        }catch (SQLException e){
+            log.error(e);
+        }
+    }
+
+    public ArrayList<Route> getRouteList() throws SQLException {
+        log.info("Retrieving route list");
+        ArrayList<Route> routeList = new ArrayList<>();
+        ResultSet routes = connection.createStatement().executeQuery("SELECT * FROM route");
+        while (routes.next()){
+            routeList.add(new Route(routes.getInt(1),routes.getString(2)));
+        }
+        return routeList;
+    }
+
+    public void addRoute(Route route){
+        log.info("Creating a route");
+        String sql = "INSERT INTO route (Name) values ('"+route.getName()+"')";
         try {
             connection.createStatement().execute(sql);
         }catch (SQLException e){
