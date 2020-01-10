@@ -17,7 +17,6 @@
 </div>
 <div>
     <p style="text-align: center"><button>Кнопка просмотра маршрутов</button>
-        <button>Кнопка просмотра автобусов</button>
         <button>Кнопка просмотра всех юзеров</button>
         <button>Кнопка просмотра всех свободных водил</button>
         <button>Кнопка просмотра всех автобусов</button>
