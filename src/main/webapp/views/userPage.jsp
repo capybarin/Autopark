@@ -16,6 +16,12 @@
 <div class="w3-container w3-blue-grey w3-opacity w3-right-align">
     <h1>Motor pool application</h1>
 </div>
+<div>
+    <p style="text-align: center"><button>Кнопка просмотра маршрутов</button>
+    <button>Кнопка просмотра автобусов</button>
+    <button>Кнопка просмотра всех юзеров</button>
+    <button>Кнопка для перехода на страницу запросов/подтверждений</button></p>
+</div>
 <!--div class="w3-container w3-center w3-margin-bottom w3-padding">
     <div class="w3-card-4">
         <div class="w3-container w3-light-blue">
