@@ -1,8 +1,7 @@
 package com.autopark.app.servlets;
 
+import com.autopark.app.database.DatabaseWorker;
 import com.autopark.app.entities.Route;
-import com.autopark.app.model.Model;
-import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -19,13 +18,12 @@ public class RouteListServlet extends HttpServlet {
 
     private static final Logger log = Logger.getLogger(ListServlet.class);
 
-
-    /*@Override
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
-        Model model = null;
+        DatabaseWorker model = null;
         try {
-            model = Model.getInstance();
+            model = DatabaseWorker.getInstance();
         } catch (SQLException e) {
             log.error("Unable to get instance ", e);
         }
@@ -37,7 +35,7 @@ public class RouteListServlet extends HttpServlet {
         }
         List<String> routesNames = routes.stream().map(Route::getName).collect(Collectors.toList());
         req.setAttribute("routeNames", routesNames);
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/userPage.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/userRouteList.jsp");
         requestDispatcher.forward(req, resp);
-    }*/
+    }
 }

@@ -1,7 +1,7 @@
 package com.autopark.app.servlets;
 
 import com.autopark.app.entities.User;
-import com.autopark.app.model.Model;
+import com.autopark.app.database.DatabaseWorker;
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -21,15 +21,15 @@ public class ListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
-        Model model = null;
+        DatabaseWorker databaseWorker = null;
         try {
-            model = Model.getInstance();
+            databaseWorker = DatabaseWorker.getInstance();
         } catch (SQLException e) {
             log.error("Unable to get instance ", e);
         }
         List<User> users = null;
         try {
-            users = model.getUserList();
+            users = databaseWorker.getUserList();
         } catch (SQLException e) {
             log.error("Unable to get user list ", e);
         }

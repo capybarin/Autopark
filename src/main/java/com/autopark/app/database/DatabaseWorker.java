@@ -1,24 +1,22 @@
-package com.autopark.app.model;
+package com.autopark.app.database;
 
 import com.autopark.app.entities.Route;
 import com.autopark.app.entities.User;
 import org.apache.log4j.Logger;
-import org.apache.log4j.BasicConfigurator;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
-public class Model {
-    private static Model instance;
-    private static final Logger log = Logger.getLogger(Model.class);
+public class DatabaseWorker {
+    private static DatabaseWorker instance;
+    private static final Logger log = Logger.getLogger(DatabaseWorker.class);
     private Connection connection;
     private String url = "jdbc:mysql://localhost:3306/motorpoll?serverTimezone=UTC";
     private String username = "root";
     private String password = "qwerty";
 
 
-    private Model() throws SQLException {
+    private DatabaseWorker() throws SQLException {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             this.connection = DriverManager.getConnection(url,username,password);
@@ -31,11 +29,11 @@ public class Model {
         return connection;
     }
 
-    public static Model getInstance() throws SQLException {
+    public static DatabaseWorker getInstance() throws SQLException {
         if(instance == null){
-            instance = new Model();
+            instance = new DatabaseWorker();
         } else if(instance.getConnection().isClosed()){
-            instance = new Model();
+            instance = new DatabaseWorker();
         }
         return instance;
     }

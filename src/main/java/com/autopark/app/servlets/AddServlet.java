@@ -2,7 +2,7 @@ package com.autopark.app.servlets;
 
 
 import com.autopark.app.entities.User;
-import com.autopark.app.model.Model;
+import com.autopark.app.database.DatabaseWorker;
 import org.apache.log4j.Logger;
 import org.apache.log4j.BasicConfigurator;
 
@@ -33,13 +33,13 @@ public class AddServlet extends HttpServlet {
         String surname = req.getParameter("surname");
         String pass = req.getParameter("pass");
         User user = new User(name, surname,"U","free", pass);
-        Model model = null;
+        DatabaseWorker databaseWorker = null;
         try {
-            model = Model.getInstance();
+            databaseWorker = DatabaseWorker.getInstance();
         } catch (SQLException e) {
             log.error("AddServlet error occurred: unable to get instance ", e);
         }
-        model.addUser(user);
+        databaseWorker.addUser(user);
 
         req.setAttribute("userName", name);
         doGet(req, resp);

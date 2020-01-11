@@ -1,7 +1,7 @@
 package com.autopark.app.servlets;
 
 import com.autopark.app.entities.User;
-import com.autopark.app.model.Model;
+import com.autopark.app.database.DatabaseWorker;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
@@ -32,9 +32,9 @@ public class LoginServlet extends HttpServlet {
         BasicConfigurator.configure();
         req.setCharacterEncoding("UTF-8");
         log.info("Запуск doPost");
-        Model model = null;
+        DatabaseWorker databaseWorker = null;
         try {
-            model = Model.getInstance();
+            databaseWorker = DatabaseWorker.getInstance();
         } catch (SQLException e) {
             log.error("Login class error occurred: ", e);
         }
@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
         String pass = req.getParameter("pass");
         log.info("Name is "+name+"\nPass is "+pass);
         try {
-            List<User> users = model.getUserList();
+            List<User> users = databaseWorker.getUserList();
             for (User user: users) {
                 log.info("Проход по списку");
                 if (user.getPassword().equals(pass) && user.getName().equals(name)){
