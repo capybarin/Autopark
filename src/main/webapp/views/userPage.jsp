@@ -16,8 +16,8 @@
 <div class="w3-container w3-blue-grey w3-opacity w3-right-align">
     <h1>Motor pool application</h1>
 </div>
-<div><button class="btn_st w3-btn w3-hover-green w3-round-large" onclick="location.href='/userRouteList'">Кнопка просмотра маршрутов</button>
-<button class="btn_st w3-btn w3-hover-green w3-round-large" onclick="location.href='/list'">Кнопка просмотра автобусов</button>
+<div><button class="btn_st w3-btn w3-hover-green w3-round-large" onclick="location.href='/userRouteList'">All routes list</button>
+<button class="btn_st w3-btn w3-hover-green w3-round-large" onclick="location.href='/BusList'">All buses list</button>
 <button class="btn_st w3-btn w3-hover-green w3-round-large" onclick="location.href='/list'">All users list</button>
 <button class="btn_st w3-btn w3-hover-green w3-round-large" onclick="location.href='/list'">Кнопка для перехода на страницу запросов/подтверждений</button></div>
 

@@ -29,7 +29,6 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        BasicConfigurator.configure();
         req.setCharacterEncoding("UTF-8");
         log.info("Запуск doPost");
         DatabaseWorker databaseWorker = null;

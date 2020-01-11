@@ -46,6 +46,7 @@
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
 
+
     <servlet>
         <servlet-name>userRoute</servlet-name>
         <servlet-class>com.autopark.app.servlets.RouteListServlet</servlet-class>
@@ -54,4 +55,15 @@
         <servlet-name>userRoute</servlet-name>
         <url-pattern>/userRouteList</url-pattern>
     </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>BusList</servlet-name>
+        <servlet-class>com.autopark.app.servlets.BusListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BusList</servlet-name>
+        <url-pattern>/BusList</url-pattern>
+    </servlet-mapping>
+
 </web-app>

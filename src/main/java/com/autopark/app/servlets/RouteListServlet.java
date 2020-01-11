@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 
 public class RouteListServlet extends HttpServlet {
 
-    private static final Logger log = Logger.getLogger(ListServlet.class);
+    private static final Logger log = Logger.getLogger(RouteListServlet.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
