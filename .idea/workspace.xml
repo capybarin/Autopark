@@ -7,24 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5087e897-faa0-42bb-a4fa-2f203a431ecd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/userRouteList.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/BusList.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/database/DatabaseWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/AddServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/AddServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/FreeBusesList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/FreeBusesListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/ListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/ListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/RouteListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/RouteListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/UserPageServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/userPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/userPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark Application/WEB-INF/classes/com/autopark/app/servlets/AddServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark Application/WEB-INF/classes/com/autopark/app/servlets/AddServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark Application/WEB-INF/classes/com/autopark/app/servlets/ListServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark Application/WEB-INF/classes/com/autopark/app/servlets/ListServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark Application/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark Application/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark Application/views/userPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark Application/views/userPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/autopark/app/servlets/AddServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/autopark/app/servlets/AddServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/autopark/app/servlets/ListServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/autopark/app/servlets/ListServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/database/DatabaseWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/database/DatabaseWorker.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -202,7 +187,7 @@
       <workItem from="1578610209187" duration="104000" />
       <workItem from="1578649708273" duration="10101000" />
       <workItem from="1578664055718" duration="1447000" />
-      <workItem from="1578740121637" duration="4685000" />
+      <workItem from="1578740121637" duration="5554000" />
     </task>
     <task id="LOCAL-00001" summary="Model class created">
       <created>1578484710726</created>

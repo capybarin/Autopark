@@ -1,5 +1,6 @@
 package com.autopark.app.database;
 
+import com.autopark.app.entities.Bus;
 import com.autopark.app.entities.Route;
 import com.autopark.app.entities.User;
 import org.apache.log4j.Logger;
@@ -75,6 +76,26 @@ public class DatabaseWorker {
         String sql = "INSERT INTO route (Name) values ('"+route.getName()+"')";
         try {
             connection.createStatement().execute(sql);
+        }catch (SQLException e){
+            log.error(e);
+        }
+    }
+
+    public ArrayList<Bus> getBusList() throws SQLException{
+        log.info("Retrieving bus list");
+        ArrayList<Bus> busList = new ArrayList<>();
+        ResultSet buses = connection.createStatement().executeQuery("SELECT  * FROM bus");
+        while (buses.next()){
+            busList.add(new Bus(buses.getInt(1),buses.getString(2), buses.getString(3)));
+        }
+        return busList;
+    }
+
+    public void addBus(Bus bus){
+        log.info("Creating a bus");
+        String sql = "INSERT INTO bus (BusName, Activity) VALUES ('"+bus.getName()+"','"+bus.getActivity()+"')";
+        try{
+            connection.createStatement().executeQuery(sql);
         }catch (SQLException e){
             log.error(e);
         }
