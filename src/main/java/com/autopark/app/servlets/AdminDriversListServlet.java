@@ -1,5 +1,6 @@
 package com.autopark.app.servlets;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,6 +12,7 @@ import org.apache.log4j.Logger;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -34,17 +36,26 @@ public class AdminDriversListServlet extends HttpServlet {
             log.error("Unable to get user list ", e);
         }
 
-        List<String> names = null;
-        List<String> surNames = null;
-        List<String> activity = null;
+        List<String> userNames = users.stream().map(User::getName).collect(Collectors.toList());
+        List<String> userSurnames = users.stream().map(User::getSurname).collect(Collectors.toList());
+        req.setAttribute("userNames", userNames);
+        req.setAttribute("userSurnames", userSurnames);
+
+        List<String> freeNames = new ArrayList<>();
+        List<String> freeSurNames = new ArrayList<>();
+        List<String> freeActivity = new ArrayList<>();
 
         for (User user: users) {
             if (user.getRole().equals("U")){
-                names.add(user.getName());
-                surNames.add(user.getSurname());
-                activity.add(user.getActivity());
+                freeNames.add(user.getName());
+                freeSurNames.add(user.getSurname());
+                freeActivity.add(user.getActivity());
             }
         }
-        log.info(names);
+        req.setAttribute("freeUserNames", freeNames);
+        req.setAttribute("freeUserSurnames", freeSurNames);
+        req.setAttribute("freeUserActivity", freeActivity);
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/adminDriverList.jsp");
+        requestDispatcher.forward(req, resp);
     }
 }

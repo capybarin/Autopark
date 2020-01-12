@@ -6,21 +6,13 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5087e897-faa0-42bb-a4fa-2f203a431ecd" name="Default Changelist" comment="">
+    <list default="true" id="5087e897-faa0-42bb-a4fa-2f203a431ecd" name="Default Changelist" comment="Login page added">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/adminDriverList.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/FreeBusesListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/AdminBusListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/FreeDriversListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/AdminDriversListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/BusList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/BusList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/AdminDriversListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/AdminDriversListServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/adminPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/adminPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/userRouteList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/userRouteList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark Application/views/BusList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark Application/views/BusList.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Autopark Application/views/adminPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark Application/views/adminPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark Application/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark Application/views/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark Application/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark Application/views/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark Application/views/userPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark Application/views/userPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark Application/views/userRouteList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark Application/views/userRouteList.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -201,7 +193,7 @@
       <workItem from="1578740121637" duration="5554000" />
       <workItem from="1578755394781" duration="1655000" />
       <workItem from="1578790170668" duration="79000" />
-      <workItem from="1578825715069" duration="3168000" />
+      <workItem from="1578825715069" duration="6315000" />
     </task>
     <task id="LOCAL-00001" summary="Model class created">
       <created>1578484710726</created>
