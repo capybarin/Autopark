@@ -1,4 +1,4 @@
 package com.autopark.app.servlets;
 
-public class FreeDriversListServlet {
+public class AdminBusListServlet {
 }
