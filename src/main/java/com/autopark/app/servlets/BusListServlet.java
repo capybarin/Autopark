@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.autopark.app.database.DatabaseWorker;
 import com.autopark.app.entities.Bus;
+import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
@@ -24,6 +25,7 @@ public class BusListServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        BasicConfigurator.configure();
         req.setCharacterEncoding("UTF-8");
         DatabaseWorker databaseWorker = null;
         try {

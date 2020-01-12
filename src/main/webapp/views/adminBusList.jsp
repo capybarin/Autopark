@@ -2,14 +2,14 @@
 <%@ page import="java.util.Iterator" %><%--
   Created by IntelliJ IDEA.
   User: vlad
-  Date: 11.01.2020
-  Time: 15:34
+  Date: 12.01.2020
+  Time: 14:37
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Route list</title>
+    <title>AdminBusList</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
@@ -24,12 +24,15 @@
         <%
             try {
                 List<String> names = (List<String>) request.getAttribute("busNames");
-                Iterator<String> nameIter = names.iterator();
+                List<String> activities = (List<String>) request.getAttribute("busActivity");
 
-                if (names != null && !names.isEmpty()) {
+                Iterator<String> nameIter = names.iterator();
+                Iterator<String> actIter = activities.iterator();
+
+                if (names != null && !names.isEmpty() && activities != null && !activities.isEmpty()) {
                     out.println("<ul class=\"w3-ul\">");
                     while (nameIter.hasNext()) {
-                        out.print("<li class=\"w3-hover-sand\">" + nameIter.next()+ "</li>");
+                        out.print("<li class=\"w3-hover-sand\">" + nameIter.next() + " [" + actIter.next() + "]</li>");
                     }
                     out.println("</ul>");
 

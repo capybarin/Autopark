@@ -75,4 +75,14 @@
         <servlet-name>adminDriverList</servlet-name>
         <url-pattern>/adminDriverList</url-pattern>
     </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>adminBusList</servlet-name>
+        <servlet-class>com.autopark.app.servlets.AdminBusListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>adminBusList</servlet-name>
+        <url-pattern>/adminBusList</url-pattern>
+    </servlet-mapping>
 </web-app>

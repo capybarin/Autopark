@@ -17,8 +17,8 @@
 </div>
 <div>
     <p style="text-align: center"><button class="btn_st w3-btn w3-hover-green w3-round-large" onclick="location.href='/userRouteList'">All routes list</button>
-        <button class="btn_st w3-btn w3-hover-green w3-round-large" onclick="location.href='/adminDriverList'">Кнопка просмотра всех юзеров свободных и занятых, с пометкой</button>
-        <button>Кнопка просмотра всех автобусов свободных и занятых, с пометкой</button>
+        <button class="btn_st w3-btn w3-hover-green w3-round-large" onclick="location.href='/adminDriverList'">All drivers list</button>
+        <button class="btn_st w3-btn w3-hover-green w3-round-large" onclick="location.href='/adminBusList'">All buses list</button>
         <button>Кнопка для перехода на страницу формирование запросов</button></p>
 </div>
 </body>
