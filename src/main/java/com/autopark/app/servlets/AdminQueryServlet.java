@@ -40,7 +40,7 @@ public class AdminQueryServlet extends HttpServlet {
         try {
             DatabaseWorker databaseWorker = DatabaseWorker.getInstance();
             Work work = new Work(driverId,routeId,busId,"N");
-            databaseWorker.addWork(work); //Уже работает, но почему то выполняется 2 раза. Возможно проблема в написаном фронт енде
+            databaseWorker.addWork(work);
             List<Work> works = databaseWorker.getAllWork();
             req.setAttribute("workList", works);
         } catch (SQLException e) {
