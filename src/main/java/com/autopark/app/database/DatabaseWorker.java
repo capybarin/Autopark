@@ -3,6 +3,8 @@ package com.autopark.app.database;
 import com.autopark.app.entities.Bus;
 import com.autopark.app.entities.Route;
 import com.autopark.app.entities.User;
+import com.autopark.app.entities.Work;
+import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
@@ -20,6 +22,7 @@ public class DatabaseWorker {
     //TODO: делать отображение задачи на основе ид, типа отправлять ид залогиненого челбаса, и смотреть если задача в которой его ид фигугриурет, и если есть то выводить, нет - то нет
 
     private DatabaseWorker() throws SQLException {
+        BasicConfigurator.configure();
         try {
             Class.forName("com.mysql.jdbc.Driver");
             this.connection = DriverManager.getConnection(url,username,password);
@@ -64,10 +67,6 @@ public class DatabaseWorker {
         }
     }
 
-    //TODO: создать больше гетеров от ид
-    public void getDriverById(int id){
-
-    }
 
     public ArrayList<Route> getRouteList() throws SQLException {
         log.info("Retrieving route list");
@@ -109,11 +108,11 @@ public class DatabaseWorker {
         }
     }
 
-    public void makeSomeWork(User user, Bus bus, Route route){
+    public void makeSomeWork(int userId, int busId, int routeId){
         //INSERT INTO `motorpoll`.`work` (`Users_id`, `Route_id`, `Bus_id`, `Accepted`) VALUES ('1', '1', '1', 'N');
         log.info("Creating some work");
         String sql = "INSERT INTO work (Users_id, Route_id, Bus_id, Accepted) " +
-                "VALUES ('" + user.getId() + "','" + bus.getId() + "','" + route.getId() + "','N')";
+                "VALUES ('" + userId + "','" + busId + "','" + routeId + "','N')";
         try{
             connection.createStatement().executeQuery(sql);
         }catch (SQLException e){
@@ -121,4 +120,42 @@ public class DatabaseWorker {
         }
     }
 
+    public ArrayList<Work> getAllWork() throws SQLException{
+        log.info("Retrieving work list");
+        ArrayList<Work> workList = new ArrayList<>();
+        ResultSet works = connection.createStatement().executeQuery("SELECT * FROM work");
+        while (works.next()){
+            workList.add(new Work(works.getInt(1),works.getInt(2),works.getInt(3),works.getInt(4),works.getString(5)));
+        }
+        return workList;
+    }
+
+    //TODO: создать больше гетеров от ид
+    public String getDriverNameById(int id){
+        String driverName = "";
+        String sql = "SELECT * FROM users WHERE idUsers = " + id;
+        try{
+            ResultSet name = connection.createStatement().executeQuery(sql);
+            while (name.next()){
+                driverName = name.getString("Name_");
+            }
+        } catch (SQLException e){
+            log.error(e);
+        }
+        return driverName;
+    }
+
+    public String getBusNameById(int id){
+        String busName = "";
+        String sql = "SELECT * FROM bus WHERE idBus = " + id;
+        try{
+            ResultSet name = connection.createStatement().executeQuery(sql);
+            while (name.next()){
+                busName = name.getString("BusName");
+            }
+        } catch (SQLException e){
+            log.error(e);
+        }
+        return busName;
+    }
 }

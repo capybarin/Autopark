@@ -1,4 +1,6 @@
-<%--
+<%@ page import="java.util.List" %>
+<%@ page import="com.autopark.app.entities.Work" %>
+<%@ page import="java.util.Iterator" %><%--
   Created by IntelliJ IDEA.
   User: vlad
   Date: 13.01.2020
@@ -34,5 +36,11 @@
         </form>
     </div>
 </div>
+
+<%
+    List<Work> works = (List<Work>) request.getAttribute("workList");
+    Iterator<Work> workIter = works.iterator();
+%>
+
 </body>
 </html>
