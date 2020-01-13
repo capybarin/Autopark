@@ -24,12 +24,15 @@
         <%
             try {
                 List<String> names = (List<String>) request.getAttribute("routeNames");
+                List<Integer> ids = (List<Integer>) request.getAttribute("ids");
+
+                Iterator<Integer> idsIter = ids.iterator();
                 Iterator<String> nameIter = names.iterator();
 
                 if (names != null && !names.isEmpty()) {
                     out.println("<ul class=\"w3-ul\">");
                     while (nameIter.hasNext()) {
-                        out.print("<li class=\"w3-hover-sand\">" + nameIter.next()+ "</li>");
+                        out.print("<li class=\"w3-hover-sand\">"+idsIter.next()+ " " + nameIter.next()+ "</li>");
                     }
                     out.println("</ul>");
 

@@ -19,7 +19,7 @@
 <div><button class="btn_st w3-btn w3-hover-green w3-round-large" onclick="location.href='/userRouteList'">All routes list</button>
 <button class="btn_st w3-btn w3-hover-green w3-round-large" onclick="location.href='/BusList'">All buses list</button>
 <button class="btn_st w3-btn w3-hover-green w3-round-large" onclick="location.href='/list'">All users list</button>
-<button class="btn_st w3-btn w3-hover-green w3-round-large" onclick="location.href='/list'">Кнопка для перехода на страницу запросов/подтверждений</button></div>
+<button class="btn_st w3-btn w3-hover-green w3-round-large" onclick="location.href='/userQuery'">Job list</button></div>
 
 <!--div class="w3-container w3-center w3-margin-bottom w3-padding">
     <div class="w3-card-4">

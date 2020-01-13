@@ -34,7 +34,9 @@ public class RouteListServlet extends HttpServlet {
             log.error(e);
         }
         List<String> routesNames = routes.stream().map(Route::getName).collect(Collectors.toList());
+        List<Integer> ids = routes.stream().map(Route::getId).collect(Collectors.toList());
         req.setAttribute("routeNames", routesNames);
+        req.setAttribute("ids", ids);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/userRouteList.jsp");
         requestDispatcher.forward(req, resp);
     }

@@ -95,4 +95,14 @@
         <servlet-name>adminQuery</servlet-name>
         <url-pattern>/adminQuery</url-pattern>
     </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>userQuery</servlet-name>
+        <servlet-class>com.autopark.app.servlets.DriverAcceptServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>userQuery</servlet-name>
+        <url-pattern>/userQuery</url-pattern>
+    </servlet-mapping>
 </web-app>
