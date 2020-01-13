@@ -39,12 +39,14 @@ public class AdminBusListServlet extends HttpServlet {
 
         List<String> busNames = buses.stream().map(Bus::getName).collect(Collectors.toList());
         List<String> busActivity = buses.stream().map(Bus::getActivity).collect(Collectors.toList());
+        List<Integer> ids = buses.stream().map(Bus::getId).collect(Collectors.toList());
 
         log.info(busNames);
         log.info(busActivity);
 
         req.setAttribute("busNames", busNames);
         req.setAttribute("busActivity", busActivity);
+        req.setAttribute("ids", ids);
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/adminBusList.jsp");
         requestDispatcher.forward(req, resp);

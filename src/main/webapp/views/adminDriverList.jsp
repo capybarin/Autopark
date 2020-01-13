@@ -27,16 +27,19 @@
                 List<String> currFreeNames = (List<String>) request.getAttribute("freeUserNames");
                 List<String> currFreeSurnames = (List<String>) request.getAttribute("freeUserSurnames");
                 List<String> currFreeActivities = (List<String>) request.getAttribute("freeUserActivity");
+                List<Integer> ids = (List<Integer>) request.getAttribute("ids");
 
 
                 Iterator<String> freeNamesIter = currFreeNames.iterator();
                 Iterator<String> freeSurIter = currFreeSurnames.iterator();
                 Iterator<String> freeActivityIter = currFreeActivities.iterator();
+                Iterator<Integer> idsIter = ids.iterator();
 
                 if (currFreeNames != null && !currFreeNames.isEmpty() && currFreeSurnames != null && !currFreeSurnames.isEmpty()) {
                     out.println("<ul class=\"w3-ul\">");
                     while (freeNamesIter.hasNext() && freeSurIter.hasNext() && freeActivityIter.hasNext()) {
-                        out.print("<li class=\"w3-hover-sand\">" + freeNamesIter.next() + " " + freeSurIter.next() + " " + "[" + freeActivityIter.next() + "]</li>");
+                        out.print("<li class=\"w3-hover-sand\">" + idsIter.next() + " " + freeNamesIter.next() +
+                                " " + freeSurIter.next() + " " + "[" + freeActivityIter.next() + "]</li>");
                     }
                     out.println("</ul>");
                     out.println("<div style=\"clear:both\"></div>");

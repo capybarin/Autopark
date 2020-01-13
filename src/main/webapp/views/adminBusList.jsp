@@ -25,14 +25,16 @@
             try {
                 List<String> names = (List<String>) request.getAttribute("busNames");
                 List<String> activities = (List<String>) request.getAttribute("busActivity");
+                List<Integer> ids = (List<Integer>) request.getAttribute("ids");
 
                 Iterator<String> nameIter = names.iterator();
                 Iterator<String> actIter = activities.iterator();
+                Iterator<Integer> idIter = ids.iterator();
 
                 if (names != null && !names.isEmpty() && activities != null && !activities.isEmpty()) {
                     out.println("<ul class=\"w3-ul\">");
                     while (nameIter.hasNext()) {
-                        out.print("<li class=\"w3-hover-sand\">" + nameIter.next() + " [" + actIter.next() + "]</li>");
+                        out.print("<li class=\"w3-hover-sand\">"+ idIter.next() + " " + nameIter.next() + " [" + actIter.next() + "]</li>");
                     }
                     out.println("</ul>");
 

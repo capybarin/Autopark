@@ -1,9 +1,6 @@
 package com.autopark.app.servlets;
 
 import com.autopark.app.database.DatabaseWorker;
-import com.autopark.app.entities.Bus;
-import com.autopark.app.entities.Route;
-import com.autopark.app.entities.User;
 import com.autopark.app.entities.Work;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
@@ -27,9 +24,6 @@ public class AdminQueryServlet extends HttpServlet {
         try {
             DatabaseWorker databaseWorker = DatabaseWorker.getInstance();
             List<Work> works = databaseWorker.getAllWork();
-            //List<User> users = databaseWorker.getUserList();
-            //List<Bus> buses = databaseWorker.getBusList();
-            //List<Route> routes = databaseWorker.getRouteList();
             req.setAttribute("workList", works);
         } catch (SQLException e) {
             log.error(e);
@@ -63,9 +57,6 @@ public class AdminQueryServlet extends HttpServlet {
             DatabaseWorker databaseWorker = DatabaseWorker.getInstance();
             Work work = new Work(driverId,routeId,busId,"N");
             databaseWorker.addWork(work);
-            //List<User> users = databaseWorker.getUserList();
-            //List<Bus> buses = databaseWorker.getBusList();
-            //List<Route> routes = databaseWorker.getRouteList();
             List<Work> works = databaseWorker.getAllWork();
             log.info(works);
             req.setAttribute("workList", works);

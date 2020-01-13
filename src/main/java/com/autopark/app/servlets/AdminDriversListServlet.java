@@ -38,6 +38,9 @@ public class AdminDriversListServlet extends HttpServlet {
 
         List<String> userNames = users.stream().map(User::getName).collect(Collectors.toList());
         List<String> userSurnames = users.stream().map(User::getSurname).collect(Collectors.toList());
+        List<Integer> ids = users.stream().map(User::getId).collect(Collectors.toList());
+
+        req.setAttribute("ids", ids);
         req.setAttribute("userNames", userNames);
         req.setAttribute("userSurnames", userSurnames);
 
