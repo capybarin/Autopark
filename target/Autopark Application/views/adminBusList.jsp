@@ -32,7 +32,7 @@
                 if (names != null && !names.isEmpty() && activities != null && !activities.isEmpty()) {
                     out.println("<ul class=\"w3-ul\">");
                     while (nameIter.hasNext()) {
-                        out.print("<li class=\"w3-hover-sand\">" + nameIter.next() + "[" + actIter.next() + "]</li>");
+                        out.print("<li class=\"w3-hover-sand\">" + nameIter.next() + " [" + actIter.next() + "]</li>");
                     }
                     out.println("</ul>");
 

@@ -17,6 +17,8 @@ public class DatabaseWorker {
     private String password = "qwerty";
 
 
+    //TODO: делать отображение задачи на основе ид, типа отправлять ид залогиненого челбаса, и смотреть если задача в которой его ид фигугриурет, и если есть то выводить, нет - то нет
+
     private DatabaseWorker() throws SQLException {
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -38,6 +40,7 @@ public class DatabaseWorker {
         }
         return instance;
     }
+
 
     public ArrayList<User> getUserList() throws SQLException {
         log.info("Retrieving user list");

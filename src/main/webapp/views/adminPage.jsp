@@ -19,7 +19,7 @@
     <p style="text-align: center"><button class="btn_st w3-btn w3-hover-green w3-round-large" onclick="location.href='/userRouteList'">All routes list</button>
         <button class="btn_st w3-btn w3-hover-green w3-round-large" onclick="location.href='/adminDriverList'">All drivers list</button>
         <button class="btn_st w3-btn w3-hover-green w3-round-large" onclick="location.href='/adminBusList'">All buses list</button>
-        <button>Кнопка для перехода на страницу формирование запросов</button></p>
+        <button class="btn_st w3-btn w3-hover-green w3-round-large" onclick="location.href='/adminQuery'">Query page</button></p>
 </div>
 </body>
 </html>

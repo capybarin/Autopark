@@ -25,10 +25,10 @@ public class LoginServlet extends HttpServlet {
         requestDispatcher.forward(req, resp);
     }
 
-    //TODO: на основе роли отправлять на разные версии одной и той же страницы
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        BasicConfigurator.configure();
         req.setCharacterEncoding("UTF-8");
         log.info("Запуск doPost");
         DatabaseWorker databaseWorker = null;
@@ -41,6 +41,7 @@ public class LoginServlet extends HttpServlet {
         String name = req.getParameter("name");
         String pass = req.getParameter("pass");
         log.info("Name is "+name+"\nPass is "+pass);
+        boolean loggedIn = false;
         try {
             List<User> users = databaseWorker.getUserList();
             for (User user: users) {
@@ -51,13 +52,17 @@ public class LoginServlet extends HttpServlet {
                         log.info("Даю роль юзера");
                         req.setAttribute("userName", user.getName());
                         req.setAttribute("role", user.getRole());
+                        loggedIn = true;
                     }
                     if (user.getRole().equals("A")){
                         log.info("Даю роль админа");
                         req.setAttribute("userName", user.getName());
                         req.setAttribute("role", user.getRole());
+                        loggedIn = true;
                     }
                 }
+            } if(loggedIn == false) {
+                log.info("FAIL");
             }
         } catch (SQLException e) {
             log.error("Login class error occurred: ", e);
