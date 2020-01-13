@@ -27,9 +27,9 @@ public class AdminQueryServlet extends HttpServlet {
         try {
             DatabaseWorker databaseWorker = DatabaseWorker.getInstance();
             List<Work> works = databaseWorker.getAllWork();
-            List<User> users = databaseWorker.getUserList();
-            List<Bus> buses = databaseWorker.getBusList();
-            List<Route> routes = databaseWorker.getRouteList();
+            //List<User> users = databaseWorker.getUserList();
+            //List<Bus> buses = databaseWorker.getBusList();
+            //List<Route> routes = databaseWorker.getRouteList();
             req.setAttribute("workList", works);
         } catch (SQLException e) {
             log.error(e);
@@ -63,9 +63,9 @@ public class AdminQueryServlet extends HttpServlet {
             DatabaseWorker databaseWorker = DatabaseWorker.getInstance();
             Work work = new Work(driverId,routeId,busId,"N");
             databaseWorker.addWork(work);
-            List<User> users = databaseWorker.getUserList();
-            List<Bus> buses = databaseWorker.getBusList();
-            List<Route> routes = databaseWorker.getRouteList();
+            //List<User> users = databaseWorker.getUserList();
+            //List<Bus> buses = databaseWorker.getBusList();
+            //List<Route> routes = databaseWorker.getRouteList();
             List<Work> works = databaseWorker.getAllWork();
             log.info(works);
             req.setAttribute("workList", works);
