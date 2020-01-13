@@ -10,8 +10,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/database/DatabaseWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/database/DatabaseWorker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/AdminQueryServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/AdminQueryServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/LoginServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/adminQuery.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/adminQuery.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark Application/views/adminQuery.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark Application/views/adminQuery.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -204,7 +204,7 @@
       <workItem from="1578825715069" duration="10235000" />
       <workItem from="1578836680665" duration="180000" />
       <workItem from="1578863608567" duration="1323000" />
-      <workItem from="1578917233783" duration="4814000" />
+      <workItem from="1578917233783" duration="6358000" />
     </task>
     <task id="LOCAL-00001" summary="Model class created">
       <created>1578484710726</created>

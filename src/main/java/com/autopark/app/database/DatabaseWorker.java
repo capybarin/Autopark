@@ -64,6 +64,11 @@ public class DatabaseWorker {
         }
     }
 
+    //TODO: создать больше гетеров от ид
+    public void getDriverById(int id){
+
+    }
+
     public ArrayList<Route> getRouteList() throws SQLException {
         log.info("Retrieving route list");
         ArrayList<Route> routeList = new ArrayList<>();

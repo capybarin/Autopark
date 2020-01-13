@@ -1,5 +1,9 @@
 package com.autopark.app.servlets;
 
+import com.autopark.app.database.DatabaseWorker;
+import com.autopark.app.entities.Bus;
+import com.autopark.app.entities.Route;
+import com.autopark.app.entities.User;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
@@ -9,6 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
 
 public class AdminQueryServlet extends HttpServlet {
 
@@ -25,7 +31,22 @@ public class AdminQueryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         BasicConfigurator.configure();
         req.setCharacterEncoding("UTF-8");
+        String driver = req.getParameter("driver");
+        String route = req.getParameter("route");
+        String bus = req.getParameter("bus");
 
+        int driverId = Integer.parseInt(driver);
+        int routeId = Integer.parseInt(route);
+        int busId = Integer.parseInt(bus);
+
+        try {
+            DatabaseWorker databaseWorker = DatabaseWorker.getInstance();
+            /*List<User> users = databaseWorker.getUserList();
+            List<Bus> buses = databaseWorker.getBusList();
+            List<Route> routes = databaseWorker.getRouteList();*/
+        } catch (SQLException e) {
+            log.error(e);
+        }
 
         doGet(req, resp);
     }

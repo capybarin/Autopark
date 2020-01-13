@@ -22,13 +22,13 @@
         </div>
         <form method="post" class="w3-selection w3-light-grey w3-padding">
             <label>Driver id:
-                <input type="text" name="name" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
+                <input type="number" name="driver" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
             </label>
             <label>Route id:
-                <input type="text" name="surname" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
+                <input type="number" name="route" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
             </label>
             <label>Bus id:
-                <input type="text" name="pass" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
+                <input type="number" name="bus" class="w3-input w3-animate-input w3-border w3-round-large" style="width: 30%"><br />
             </label>
             <button type="submit" class="w3-btn w3-green w3-round-large w3-margin-bottom">Submit</button>
         </form>
