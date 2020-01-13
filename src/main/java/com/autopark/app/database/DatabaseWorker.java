@@ -130,7 +130,6 @@ public class DatabaseWorker {
         return workList;
     }
 
-    //TODO: создать больше гетеров от ид
     public String getDriverNameById(int id){
         String driverName = "";
         String sql = "SELECT * FROM users WHERE idUsers = " + id;
@@ -157,5 +156,19 @@ public class DatabaseWorker {
             log.error(e);
         }
         return busName;
+    }
+
+    public String getRouteNameById(int id){
+        String routeName = "";
+        String sql = "SELECT * FROM route WHERE idRoute = " + id;
+        try{
+            ResultSet name = connection.createStatement().executeQuery(sql);
+            while (name.next()){
+                routeName = name.getString("Name");
+            }
+        } catch (SQLException e){
+            log.error(e);
+        }
+        return routeName;
     }
 }
