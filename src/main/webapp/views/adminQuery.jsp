@@ -37,9 +37,25 @@
     </div>
 </div>
 
+<div class="w3-container w3-light-blue">
+    <h2>Current work list</h2>
+</div>
+
 <%
-    List<Work> works = (List<Work>) request.getAttribute("workList");
-    Iterator<Work> workIter = works.iterator();
+    try {
+        List<Work> works = (List<Work>) request.getAttribute("workList");
+        Iterator<Work> workIter = works.iterator();
+
+        if(works != null && !works.isEmpty()){
+            out.println("<ul class=\"w3-ul\">");
+            for (Work work: works) {
+                //out.println("<li class=\"w3-hover-sand\">" ++ " " ++ "</li>");
+            }
+            out.println("</ul>");
+        }
+    }catch (Exception e){
+        out.println("<p><img src="+"images/error.png"+" alt="+"Error"+"></p>");
+    }
 %>
 
 </body>

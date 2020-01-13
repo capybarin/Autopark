@@ -108,13 +108,14 @@ public class DatabaseWorker {
         }
     }
 
-    public void makeSomeWork(int userId, int busId, int routeId){
+    public void addWork(Work work){
         //INSERT INTO `motorpoll`.`work` (`Users_id`, `Route_id`, `Bus_id`, `Accepted`) VALUES ('1', '1', '1', 'N');
         log.info("Creating some work");
         String sql = "INSERT INTO work (Users_id, Route_id, Bus_id, Accepted) " +
-                "VALUES ('" + userId + "','" + busId + "','" + routeId + "','N')";
+                "VALUES ('" + work.getUserId() + "','" + work.getRouteId() + "','" + work.getBusId() + "','" + work.getAccepted() + "')";
         try{
-            connection.createStatement().executeQuery(sql);
+            log.info(sql);
+            connection.createStatement().executeUpdate(sql);
         }catch (SQLException e){
             log.error(e);
         }

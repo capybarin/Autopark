@@ -1,9 +1,6 @@
 package com.autopark.app.servlets;
 
 import com.autopark.app.database.DatabaseWorker;
-import com.autopark.app.entities.Bus;
-import com.autopark.app.entities.Route;
-import com.autopark.app.entities.User;
 import com.autopark.app.entities.Work;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
@@ -42,7 +39,8 @@ public class AdminQueryServlet extends HttpServlet {
 
         try {
             DatabaseWorker databaseWorker = DatabaseWorker.getInstance();
-            databaseWorker.makeSomeWork(driverId,busId,routeId);
+            Work work = new Work(driverId,routeId,busId,"N");
+            databaseWorker.addWork(work); //Уже работает, но почему то выполняется 2 раза. Возможно проблема в написаном фронт енде
             List<Work> works = databaseWorker.getAllWork();
             req.setAttribute("workList", works);
         } catch (SQLException e) {

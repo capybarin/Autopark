@@ -15,6 +15,13 @@ public class Work {
         this.accepted = accepted;
     }
 
+    public Work(int userId, int routeId, int busId, String accepted) {
+        this.userId = userId;
+        this.routeId = routeId;
+        this.busId = busId;
+        this.accepted = accepted;
+    }
+
     public int getId() {
         return id;
     }
