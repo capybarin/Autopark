@@ -25,6 +25,8 @@ public class AdminQueryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         BasicConfigurator.configure();
         req.setCharacterEncoding("UTF-8");
+
+
         doGet(req, resp);
     }
 }
