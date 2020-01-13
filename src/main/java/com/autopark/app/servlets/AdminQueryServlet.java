@@ -1,6 +1,9 @@
 package com.autopark.app.servlets;
 
 import com.autopark.app.database.DatabaseWorker;
+import com.autopark.app.entities.Bus;
+import com.autopark.app.entities.Route;
+import com.autopark.app.entities.User;
 import com.autopark.app.entities.Work;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
@@ -21,6 +24,16 @@ public class AdminQueryServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
+        try {
+            DatabaseWorker databaseWorker = DatabaseWorker.getInstance();
+            List<Work> works = databaseWorker.getAllWork();
+            List<User> users = databaseWorker.getUserList();
+            List<Bus> buses = databaseWorker.getBusList();
+            List<Route> routes = databaseWorker.getRouteList();
+            req.setAttribute("workList", works);
+        } catch (SQLException e) {
+            log.error(e);
+        }
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/adminQuery.jsp");
         requestDispatcher.forward(req, resp);
     }
@@ -33,15 +46,28 @@ public class AdminQueryServlet extends HttpServlet {
         String route = req.getParameter("route");
         String bus = req.getParameter("bus");
 
-        int driverId = Integer.parseInt(driver);
-        int routeId = Integer.parseInt(route);
-        int busId = Integer.parseInt(bus);
+        int driverId;
+        int routeId;
+        int busId;
+        try{
+            driverId = Integer.parseInt(driver);
+            routeId = Integer.parseInt(route);
+            busId = Integer.parseInt(bus);
+        }catch (java.lang.Exception e){
+            driverId = 0;
+            routeId = 0;
+            busId = 0;
+        }
 
         try {
             DatabaseWorker databaseWorker = DatabaseWorker.getInstance();
             Work work = new Work(driverId,routeId,busId,"N");
             databaseWorker.addWork(work);
+            List<User> users = databaseWorker.getUserList();
+            List<Bus> buses = databaseWorker.getBusList();
+            List<Route> routes = databaseWorker.getRouteList();
             List<Work> works = databaseWorker.getAllWork();
+            log.info(works);
             req.setAttribute("workList", works);
         } catch (SQLException e) {
             log.error(e);

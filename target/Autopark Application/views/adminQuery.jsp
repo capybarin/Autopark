@@ -49,7 +49,7 @@
         if(works != null && !works.isEmpty()){
             out.println("<ul class=\"w3-ul\">");
             for (Work work: works) {
-                //out.println("<li class=\"w3-hover-sand\">" ++ " " ++ "</li>");
+                out.println("<li class=\"w3-hover-sand\">" + work.getUserId() + "</li>");
             }
             out.println("</ul>");
         }

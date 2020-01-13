@@ -1,6 +1,10 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.autopark.app.entities.Work" %>
-<%@ page import="java.util.Iterator" %><%--
+<%@ page import="java.util.Iterator" %>
+<%@ page import="com.autopark.app.entities.User" %>
+<%@ page import="com.autopark.app.entities.Bus" %>
+<%@ page import="com.autopark.app.entities.Route" %>
+<%@ page import="com.autopark.app.database.DatabaseWorker" %><%--
   Created by IntelliJ IDEA.
   User: vlad
   Date: 13.01.2020
@@ -44,12 +48,16 @@
 <%
     try {
         List<Work> works = (List<Work>) request.getAttribute("workList");
-        Iterator<Work> workIter = works.iterator();
+        List<User> users = (List<User>) request.getAttribute("userList");
+        List<Bus> buses = (List<Bus>) request.getAttribute("busList");
+        List<Route> routes = (List<Route>) request.getAttribute("routeList");
+        DatabaseWorker databaseWorker = DatabaseWorker.getInstance();
+
 
         if(works != null && !works.isEmpty()){
             out.println("<ul class=\"w3-ul\">");
             for (Work work: works) {
-                //out.println("<li class=\"w3-hover-sand\">" ++ " " ++ "</li>");
+                out.println("<li class=\"w3-hover-sand\">" /*+ databaseWorker.getDriverNameById(work.getId())*/ + " " + "</li>"); //Делай, Влад, как тут!!!!!!
             }
             out.println("</ul>");
         }
