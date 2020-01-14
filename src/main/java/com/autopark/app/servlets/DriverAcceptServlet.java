@@ -22,7 +22,7 @@ public class DriverAcceptServlet extends HttpServlet {
 
     private static final Logger log = Logger.getLogger(DriverAcceptServlet.class);
 
-    
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
@@ -55,7 +55,22 @@ public class DriverAcceptServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         BasicConfigurator.configure();
-        log.info("Submit button pressed");
+        String workId = req.getParameter("id");
+
+        int id;
+        try{
+            id = Integer.parseInt(workId);
+        }catch (java.lang.Exception e){
+            id = 0;
+        }
+        try {
+            DatabaseWorker databaseWorker = DatabaseWorker.getInstance();
+            databaseWorker.acceptWork(id);
+            List<Work> work = databaseWorker.getAllWork();
+            req.setAttribute("workList", work);
+        } catch (SQLException e) {
+            log.error(e);
+        }
         doGet(req, resp);
     }
 }
