@@ -129,6 +129,16 @@ public class DatabaseWorker {
         return workList;
     }
 
+    public void acceptWork(int workId){
+        //UPDATE `motorpoll`.`work` SET `Accepted`='Y' WHERE `idWork`='1';
+        String sql = "UPDATE work SET Accepter='Y' WHERE idWork = " +workId;
+        try {
+            connection.createStatement().executeUpdate(sql);
+        } catch (SQLException e) {
+            log.error(e);
+        }
+    }
+
     public String getDriverNameById(int id){
         String driverName = "";
         String sql = "SELECT * FROM users WHERE idUsers = " + id;

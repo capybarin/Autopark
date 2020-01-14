@@ -47,4 +47,8 @@ public class DatabaseWorkerTest {
         String actual = databaseWorker.getRouteNameById(2);
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void acceptWork() {
+    }
 }
