@@ -22,8 +22,7 @@ public class DriverAcceptServlet extends HttpServlet {
 
     private static final Logger log = Logger.getLogger(DriverAcceptServlet.class);
 
-    //TODO: делать отображение задачи на основе ид, типа отправлять ид залогиненого челбаса, и смотреть если задача в которой его ид фигугриурет, и если есть то выводить, нет - то нет
-    //TODO: походу надо писать файл
+    
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
