@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.sql.SQLException;
 import java.util.List;
@@ -29,17 +30,14 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         BasicConfigurator.configure();
         req.setCharacterEncoding("UTF-8");
-        //log.info("Запуск doPost");
         DatabaseWorker databaseWorker = null;
         try {
             databaseWorker = DatabaseWorker.getInstance();
         } catch (SQLException e) {
             log.error("Login class error occurred: ", e);
         }
-        //log.info("Интстанс готов, беру данные");
         String name = req.getParameter("name");
         String pass = req.getParameter("pass");
-        //log.info("Name is "+name+"\nPass is "+pass);
         boolean loggedIn = false;
         try {
             List<User> users = databaseWorker.getUserList();
@@ -50,14 +48,9 @@ public class LoginServlet extends HttpServlet {
                         log.info("Grants user role");
                         req.setAttribute("userName", user.getName());
                         req.setAttribute("role", user.getRole());
-                        File tmp = new File(System.getProperty("user.home"), "tmp.txt");
-                        tmp.createNewFile();
-                        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(tmp,false));
-                        bufferedWriter.write(String.valueOf(user.getId()));
-                        bufferedWriter.flush();
-                        //tmp.deleteOnExit();
                         loggedIn = true;
-                        
+                        HttpSession session = req.getSession();
+                        session.setAttribute("currOnline", user.getId());
                     }
                     if (user.getRole().equals("A")){
                         log.info("Grants admin role");
