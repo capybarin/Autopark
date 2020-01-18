@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.autopark.app.entities.Work" %>
 <%@ page import="com.autopark.app.database.DatabaseWorker" %><%--
@@ -35,25 +36,16 @@
         <div class="w3-container w3-light-blue">
             <h2>Current work list</h2>
         </div>
-        <%
-            try {
-                List<Work> works = (List<Work>) request.getAttribute("workList");
-                DatabaseWorker databaseWorker = DatabaseWorker.getInstance();
-
-                if(works != null && !works.isEmpty()){
-                    out.println("<ul class=\"w3-ul\">");
-                    for (Work work: works) {
-                        out.println("<li class=\"w3-hover-sand\"><br>Work id: " + work.getId() + "</br>"
-                                + "<br>Route: " + databaseWorker.getRouteNameById(work.getRouteId()) + "</br>"
-                                + "<br>Bus №" + databaseWorker.getBusNameById(work.getBusId()) + "</br>"
-                                + "<br>Accepted: " + work.getAccepted() + "o</br></li>");
-                    }
-                    out.println("</ul>");
-                }
-            }catch (Exception e){
-                out.println("<p><img src="+"images/error.png"+" alt="+"Error"+"></p>");
-            }
-        %>
+        <c:forEach items="${workList}" var="work">
+            <ul class="w3-ul">
+                <li class="w3-hover-sand">
+                    <h5>Work id: ${work.workId}</h5>
+                    <h5>Route: ${work.routeName}</h5>
+                    <h5>Bus №${work.busName}</h5>
+                    <h5>Accepted: ${work.accepted}</h5>
+                </li>
+            </ul>
+        </c:forEach>
     </div>
 </div>
 </body>

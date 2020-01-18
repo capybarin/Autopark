@@ -2,6 +2,7 @@ package com.autopark.app.servlets;
 
 import com.autopark.app.database.DatabaseWorker;
 import com.autopark.app.entities.Work;
+import com.autopark.app.misc.AdminQueryOutputHelp;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
@@ -12,19 +13,31 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class AdminQueryServlet extends HttpServlet {
 
-    private static final Logger log = Logger.getLogger(AddServlet.class);
+    private static final Logger log = Logger.getLogger(AdminQueryServlet.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
+        log.info("doGet method");
         try {
             DatabaseWorker databaseWorker = DatabaseWorker.getInstance();
             List<Work> works = databaseWorker.getAllWork();
-            req.setAttribute("workList", works);
+            AdminQueryOutputHelp adminQueryOutputHelp = null;
+            List<AdminQueryOutputHelp> adminQueryOutputHelpArrayList = new ArrayList<>();
+            for (Work work1: works) {
+                adminQueryOutputHelp = new AdminQueryOutputHelp(databaseWorker.getDriverNameById(work1.getId()),
+                        databaseWorker.getRouteNameById(work1.getRouteId()),
+                        databaseWorker.getBusNameById(work1.getBusId()),
+                        work1.getAccepted());
+                adminQueryOutputHelpArrayList.add(adminQueryOutputHelp);
+            }
+            log.info(adminQueryOutputHelpArrayList);
+            req.setAttribute("work", adminQueryOutputHelpArrayList);
         } catch (SQLException e) {
             log.error(e);
         }
@@ -58,8 +71,17 @@ public class AdminQueryServlet extends HttpServlet {
             Work work = new Work(driverId,routeId,busId,"N");
             databaseWorker.addWork(work);
             List<Work> works = databaseWorker.getAllWork();
-            log.info(works);
-            req.setAttribute("workList", works);
+            AdminQueryOutputHelp adminQueryOutputHelp = null;
+            List<AdminQueryOutputHelp> adminQueryOutputHelpArrayList = new ArrayList<>();
+            for (Work work1: works) {
+                adminQueryOutputHelp = new AdminQueryOutputHelp(databaseWorker.getDriverNameById(work1.getId()),
+                        databaseWorker.getRouteNameById(work1.getRouteId()),
+                        databaseWorker.getBusNameById(work1.getBusId()),
+                        work1.getAccepted());
+                adminQueryOutputHelpArrayList.add(adminQueryOutputHelp);
+            }
+            log.info(adminQueryOutputHelpArrayList);
+            req.setAttribute("work", adminQueryOutputHelpArrayList);
         } catch (SQLException e) {
             log.error(e);
         }

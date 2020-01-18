@@ -15,6 +15,7 @@ import java.util.List;
 
 import com.autopark.app.database.DatabaseWorker;
 import com.autopark.app.entities.Work;
+import com.autopark.app.misc.UserQueryOutputHelp;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
@@ -22,6 +23,7 @@ public class DriverAcceptServlet extends HttpServlet {
 
     private static final Logger log = Logger.getLogger(DriverAcceptServlet.class);
 
+    //TODO: обновить данные в бд для машины/водителя на busy при подтверждении заказа
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -46,7 +48,14 @@ public class DriverAcceptServlet extends HttpServlet {
             if(work.getUserId() == temp && work.getAccepted().equals("N"))
                 currentIdWork.add(work);
         }
-        req.setAttribute("workList", currentIdWork);
+        UserQueryOutputHelp userQueryOutputHelp = null;
+        List<UserQueryOutputHelp> userQueryOutputHelpList = new ArrayList<>();
+        for (Work work:currentIdWork) {
+            userQueryOutputHelp = new UserQueryOutputHelp(work.getId(), databaseWorker.getRouteNameById(work.getRouteId()),
+                    databaseWorker.getBusNameById(work.getBusId()), work.getAccepted());
+            userQueryOutputHelpList.add(userQueryOutputHelp);
+        }
+        req.setAttribute("workList", userQueryOutputHelpList);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/userQuery.jsp");
         requestDispatcher.forward(req, resp);
     }
@@ -67,7 +76,14 @@ public class DriverAcceptServlet extends HttpServlet {
             DatabaseWorker databaseWorker = DatabaseWorker.getInstance();
             databaseWorker.acceptWork(id);
             List<Work> work = databaseWorker.getAllWork();
-            req.setAttribute("workList", work);
+            UserQueryOutputHelp userQueryOutputHelp = null;
+            List<UserQueryOutputHelp> userQueryOutputHelpList = new ArrayList<>();
+            for (Work works:work) {
+                userQueryOutputHelp = new UserQueryOutputHelp(works.getId(), databaseWorker.getRouteNameById(works.getRouteId()),
+                        databaseWorker.getBusNameById(works.getBusId()), works.getAccepted());
+                userQueryOutputHelpList.add(userQueryOutputHelp);
+            }
+            req.setAttribute("workList", userQueryOutputHelpList);
         } catch (SQLException e) {
             log.error(e);
         }
