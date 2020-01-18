@@ -23,7 +23,7 @@ public class DriverAcceptServlet extends HttpServlet {
 
     private static final Logger log = Logger.getLogger(DriverAcceptServlet.class);
 
-    //TODO: обновить данные в бд для машины/водителя на busy при подтверждении заказа
+    //TODO: обновить данные в бд для машины на busy при подтверждении заказа
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -34,6 +34,7 @@ public class DriverAcceptServlet extends HttpServlet {
         DatabaseWorker databaseWorker = null;
         try {
             databaseWorker = DatabaseWorker.getInstance();
+            databaseWorker.updateUserToBusy(temp);
         } catch (SQLException e) {
             log.error(e);
         }
@@ -63,6 +64,7 @@ public class DriverAcceptServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
+
         BasicConfigurator.configure();
         String workId = req.getParameter("id");
 

@@ -65,6 +65,15 @@ public class DatabaseWorker {
         }
     }
 
+    public void updateUserToBusy(int id){
+        //UPDATE `motorpoll`.`users` SET `Activity`='busy' WHERE `idUsers`='1';
+        String sql = "UPDATE users SET Activity='busy' WHERE idUsers=" + id;
+        try {
+            connection.createStatement().executeUpdate(sql);
+        } catch (SQLException e) {
+            log.error(e);
+        }
+    }
 
     public ArrayList<Route> getRouteList() throws SQLException {
         log.info("Retrieving route list");

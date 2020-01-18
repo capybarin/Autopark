@@ -7,13 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5087e897-faa0-42bb-a4fa-2f203a431ecd" name="Default Changelist" comment="Login page added">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/misc/AdminQueryOutputHelp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/misc/UserQueryOutputHelp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/AdminQueryServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/AdminQueryServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/database/DatabaseWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/database/DatabaseWorker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/DriverAcceptServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/DriverAcceptServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/adminQuery.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/adminQuery.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/userQuery.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/userQuery.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -280,7 +276,7 @@
       <workItem from="1579271809976" duration="7000" />
       <workItem from="1579348578788" duration="10000" />
       <workItem from="1579349556535" duration="88000" />
-      <workItem from="1579350049232" duration="8866000" />
+      <workItem from="1579350049232" duration="9544000" />
     </task>
     <task id="LOCAL-00001" summary="Model class created">
       <created>1578484710726</created>
