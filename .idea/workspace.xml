@@ -6,40 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5087e897-faa0-42bb-a4fa-2f203a431ecd" name="Default Changelist" comment="Login page added">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/AdminBusListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/AdminBusListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/AdminDriversListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/AdminDriversListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/BusListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/BusListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/ListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/ListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/RouteListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/RouteListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/BusList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/BusList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/add.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/adminBusList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/adminBusList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/adminDriverList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/adminDriverList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/adminPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/adminPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/adminRouteList.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/userPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/userPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/userQuery.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/userQuery.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/userRouteList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/userRouteList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark Application.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark Application.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark Application/WEB-INF/classes/META-INF/Autopark Application.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark Application/WEB-INF/classes/com/autopark/app/servlets/ListServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark Application/WEB-INF/classes/com/autopark/app/servlets/ListServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark Application/views/adminBusList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark Application/views/adminBusList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark Application/views/adminDriverList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark Application/views/adminDriverList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark Application/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark Application/views/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark Application/views/userQuery.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark Application/views/userQuery.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Autopark Application/views/userRouteList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Autopark Application/views/userRouteList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Autopark Application.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/autopark/app/servlets/ListServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/autopark/app/servlets/ListServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/Autopark Application.kotlin_module" beforeDir="false" />
-    </list>
+    <list default="true" id="5087e897-faa0-42bb-a4fa-2f203a431ecd" name="Default Changelist" comment="Login page added" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -305,7 +272,7 @@
       <workItem from="1579271809976" duration="7000" />
       <workItem from="1579348578788" duration="10000" />
       <workItem from="1579349556535" duration="88000" />
-      <workItem from="1579350049232" duration="4310000" />
+      <workItem from="1579350049232" duration="4551000" />
     </task>
     <task id="LOCAL-00001" summary="Model class created">
       <created>1578484710726</created>
