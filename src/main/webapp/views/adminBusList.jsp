@@ -1,5 +1,5 @@
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.Iterator" %><%--
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
   Created by IntelliJ IDEA.
   User: vlad
   Date: 12.01.2020
@@ -21,33 +21,13 @@
         <div class="w3-container w3-light-blue">
             <h2>Buses</h2>
         </div>
-        <%
-            try {
-                List<String> names = (List<String>) request.getAttribute("busNames");
-                List<String> activities = (List<String>) request.getAttribute("busActivity");
-                List<Integer> ids = (List<Integer>) request.getAttribute("ids");
-
-                Iterator<String> nameIter = names.iterator();
-                Iterator<String> actIter = activities.iterator();
-                Iterator<Integer> idIter = ids.iterator();
-
-                if (names != null && !names.isEmpty() && activities != null && !activities.isEmpty()) {
-                    out.println("<ul class=\"w3-ul\">");
-                    while (nameIter.hasNext()) {
-                        out.print("<li class=\"w3-hover-sand\">"+ idIter.next() + " " + nameIter.next() + " [" + actIter.next() + "]</li>");
-                    }
-                    out.println("</ul>");
-
-                } else out.println("<div class=\"w3-panel w3-red w3-display-container w3-card-4 w3-round\">\n"
-                        +
-                        "   <span onclick=\"this.parentElement.style.display='none'\"\n" +
-                        "   class=\"w3-button w3-margin-right w3-display-right w3-round-large w3-hover-red w3-border w3-border-red w3-hover-border-grey\">×</span>\n" +
-                        "   <h5>There are no buses yet!</h5>\n" +
-                        "</div>");
-            } catch (Exception e){
-                out.println("<p><img src="+"images/error.png"+" alt="+"Error"+"></p>");
-            }
-        %>
+        <c:forEach items="${buses}" var="bus">
+            <ul class="w3-ul">
+                <li class="w3-hover-sand">
+                    [${bus.id}] ${bus.name} [${bus.activity}]
+                </li>
+            </ul>
+        </c:forEach>
     </div>
 </div>
 </body>

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: vlad
@@ -17,24 +18,21 @@
     <h1>Motor pool application</h1>
 </div>
 <div class="w3-container w3-padding">
-    <%
-        if (request.getAttribute("userName") != null && request.getAttribute("role").equals("U")) {
-            out.println("<div class=\"w3-panel w3-green w3-display-container w3-card-4 w3-round\">\n" +
-                    "   <span onclick=\"this.parentElement.style.display='none'\"\n" +
-                    "   class=\"w3-button w3-margin-right w3-display-right w3-round-large w3-hover-green w3-border w3-border-green w3-hover-border-grey\">×</span>\n" +
-                    "   <h5>Hello, " + request.getAttribute("userName") + "!</h5>\n" +
-                    "<button class=\"w3-btn w3-hover-red w3-round-large\" onclick=\"location.href='views/userPage.jsp'\"><h5>Press me to continue</h5></button>"+
-                    "</div>");
-        }
-        if (request.getAttribute("userName") != null && request.getAttribute("role").equals("A")) {
-            out.println("<div class=\"w3-panel w3-green w3-display-container w3-card-4 w3-round\">\n" +
-                    "   <span onclick=\"this.parentElement.style.display='none'\"\n" +
-                    "   class=\"w3-button w3-margin-right w3-display-right w3-round-large w3-hover-green w3-border w3-border-green w3-hover-border-grey\">×</span>\n" +
-                    "   <h5>Hello, " + request.getAttribute("userName") + "!</h5>\n" +
-                    "<button class=\"w3-btn w3-hover-red w3-round-large\" onclick=\"location.href='views/adminPage.jsp'\"><h5>Press me to continue</h5></button>"+
-                    "</div>");
-        }
-    %>
+    <c:if test="${userName != null}">
+        <c:if test="${role == 'U'}">
+            <div class="w3-panel w3-green w3-display-container w3-card-4 w3-round">
+                <h1>Hi ${userName}!</h1>
+                <button class="w3-btn w3-hover-red w3-round-large" onclick="location.href='views/userPage.jsp'"><h5>Press me to continue</h5></button>
+            </div>
+        </c:if>
+        <c:if test="${role == 'A'}">
+            <div class="w3-panel w3-green w3-display-container w3-card-4 w3-round">
+                <h1>Hi ${userName}!</h1>
+                <button class="w3-btn w3-hover-red w3-round-large" onclick="location.href='views/adminPage.jsp'"><h5>Press me to continue</h5></button>
+            </div>
+        </c:if>
+    </c:if>
+
     <div class="w3-card-4">
         <div class="w3-container w3-center w3-green">
             <h2>Logging in</h2>

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: vlad
@@ -17,15 +18,13 @@
 </div>
 
 <div class="w3-container w3-padding">
-    <%
-        if (request.getAttribute("userName") != null) {
-            out.println("<div class=\"w3-panel w3-green w3-display-container w3-card-4 w3-round\">\n" +
-                    "   <span onclick=\"this.parentElement.style.display='none'\"\n" +
-                    "   class=\"w3-button w3-margin-right w3-display-right w3-round-large w3-hover-green w3-border w3-border-green w3-hover-border-grey\">×</span>\n" +
-                    "   <h5>Driver '" + request.getAttribute("userName") + " " + "' registered!</h5>\n" +
-                    "</div>");
-        }
-    %>
+    <c:if test="${name != null}">
+        <div class="w3-panel w3-green w3-display-container w3-card-4 w3-round">
+        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-margin-right w3-display-right w3-round-large w3-hover-green w3-border w3-border-green w3-hover-border-grey">×</span>
+        <h5>New driver registered!</h5>
+        </div>
+    </c:if>
+
     <div class="w3-card-4">
         <div class="w3-container w3-center w3-green">
             <h2>Sign up</h2>

@@ -36,28 +36,9 @@ public class AdminDriversListServlet extends HttpServlet {
             log.error("Unable to get user list ", e);
         }
 
-        List<String> userNames = users.stream().map(User::getName).collect(Collectors.toList());
-        List<String> userSurnames = users.stream().map(User::getSurname).collect(Collectors.toList());
-        List<Integer> ids = users.stream().map(User::getId).collect(Collectors.toList());
 
-        req.setAttribute("ids", ids);
-        req.setAttribute("userNames", userNames);
-        req.setAttribute("userSurnames", userSurnames);
+        req.setAttribute("users", users);
 
-        List<String> freeNames = new ArrayList<>();
-        List<String> freeSurNames = new ArrayList<>();
-        List<String> freeActivity = new ArrayList<>();
-
-        for (User user: users) {
-            if (user.getRole().equals("U")){
-                freeNames.add(user.getName());
-                freeSurNames.add(user.getSurname());
-                freeActivity.add(user.getActivity());
-            }
-        }
-        req.setAttribute("freeUserNames", freeNames);
-        req.setAttribute("freeUserSurnames", freeSurNames);
-        req.setAttribute("freeUserActivity", freeActivity);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/adminDriverList.jsp");
         requestDispatcher.forward(req, resp);
     }

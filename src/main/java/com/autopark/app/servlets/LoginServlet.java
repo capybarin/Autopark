@@ -57,6 +57,7 @@ public class LoginServlet extends HttpServlet {
                         bufferedWriter.flush();
                         //tmp.deleteOnExit();
                         loggedIn = true;
+                        
                     }
                     if (user.getRole().equals("A")){
                         log.info("Grants admin role");

@@ -1,5 +1,4 @@
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.Iterator" %><%--
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><%--
   Created by IntelliJ IDEA.
   User: vlad
   Date: 12.01.2020
@@ -21,39 +20,15 @@
         <div class="w3-container w3-light-blue">
             <h2>Users</h2>
         </div>
-        <%
-            try {
-
-                List<String> currFreeNames = (List<String>) request.getAttribute("freeUserNames");
-                List<String> currFreeSurnames = (List<String>) request.getAttribute("freeUserSurnames");
-                List<String> currFreeActivities = (List<String>) request.getAttribute("freeUserActivity");
-                List<Integer> ids = (List<Integer>) request.getAttribute("ids");
-
-
-                Iterator<String> freeNamesIter = currFreeNames.iterator();
-                Iterator<String> freeSurIter = currFreeSurnames.iterator();
-                Iterator<String> freeActivityIter = currFreeActivities.iterator();
-                Iterator<Integer> idsIter = ids.iterator();
-
-                if (currFreeNames != null && !currFreeNames.isEmpty() && currFreeSurnames != null && !currFreeSurnames.isEmpty()) {
-                    out.println("<ul class=\"w3-ul\">");
-                    while (freeNamesIter.hasNext() && freeSurIter.hasNext() && freeActivityIter.hasNext()) {
-                        out.print("<li class=\"w3-hover-sand\">" + idsIter.next() + " " + freeNamesIter.next() +
-                                " " + freeSurIter.next() + " " + "[" + freeActivityIter.next() + "]</li>");
-                    }
-                    out.println("</ul>");
-                    out.println("<div style=\"clear:both\"></div>");
-
-                } else out.println("<div class=\"w3-panel w3-red w3-display-container w3-card-4 w3-round\">\n"
-                        +
-                        "   <span onclick=\"this.parentElement.style.display='none'\"\n" +
-                        "   class=\"w3-button w3-margin-right w3-display-right w3-round-large w3-hover-red w3-border w3-border-red w3-hover-border-grey\">×</span>\n" +
-                        "   <h5>There are no users yet!</h5>\n" +
-                        "</div>");
-            } catch (Exception e){
-                out.println("<p><img src="+"images/error.png"+" alt="+"Error"+"></p>");
-            }
-        %>
+        <c:forEach items="${users}" var="user">
+            <c:if test="${user.role == 'U'}">
+                <ul class="w3-ul">
+                    <li class="w3-hover-sand">
+                        [${user.id}] ${user.name} ${user.surname} [${user.activity}]
+                    </li>
+                </ul>
+            </c:if>
+        </c:forEach>
     </div>
 </div>
 </body>

@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class ListServlet extends HttpServlet {
 
@@ -33,10 +32,7 @@ public class ListServlet extends HttpServlet {
         } catch (SQLException e) {
             log.error("Unable to get user list ", e);
         }
-        List<String> userNames = users.stream().map(User::getName).collect(Collectors.toList());
-        List<String> userSurnames = users.stream().map(User::getSurname).collect(Collectors.toList());
-        req.setAttribute("userNames", userNames);
-        req.setAttribute("userSurnames", userSurnames);
+        req.setAttribute("users", users);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/list.jsp");
         requestDispatcher.forward(req, resp);
     }

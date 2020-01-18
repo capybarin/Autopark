@@ -39,9 +39,7 @@ public class BusListServlet extends HttpServlet {
         } catch (SQLException e) {
             log.error("Unable to get bus list ", e);
         }
-        List<String> busNames = buses.stream().map(Bus::getName).collect(Collectors.toList());
-        log.info(busNames);
-        req.setAttribute("busNames", busNames);
+        req.setAttribute("buses", buses);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/BusList.jsp");
         requestDispatcher.forward(req, resp);
     }
