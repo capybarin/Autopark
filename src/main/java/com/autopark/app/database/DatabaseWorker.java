@@ -115,6 +115,16 @@ public class DatabaseWorker {
         }
     }
 
+    public void updateBusToBusy(int id){
+        //UPDATE `motorpoll`.`bus` SET `Activity`='busy' WHERE `idBus`='1';
+        String sql = "UPDATE bus SET Activity='busy' WHERE idBus=" + id;
+        try {
+            connection.createStatement().executeUpdate(sql);
+        } catch (SQLException e) {
+            log.error(e);
+        }
+    }
+
     public void addWork(Work work){
         //INSERT INTO `motorpoll`.`work` (`Users_id`, `Route_id`, `Bus_id`, `Accepted`) VALUES ('1', '1', '1', 'N');
         log.info("Creating some work");

@@ -78,6 +78,10 @@ public class DriverAcceptServlet extends HttpServlet {
             DatabaseWorker databaseWorker = DatabaseWorker.getInstance();
             databaseWorker.acceptWork(id);
             List<Work> work = databaseWorker.getAllWork();
+            for (Work work1:work) {
+                if(work1.getId() == id)
+                    databaseWorker.updateBusToBusy(work1.getBusId());
+            }
             UserQueryOutputHelp userQueryOutputHelp = null;
             List<UserQueryOutputHelp> userQueryOutputHelpList = new ArrayList<>();
             for (Work works:work) {
