@@ -23,7 +23,6 @@ public class AdminQueryServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("UTF-8");
 
         try {
             DatabaseWorker databaseWorker = DatabaseWorker.getInstance();
@@ -49,7 +48,6 @@ public class AdminQueryServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         BasicConfigurator.configure();
-        req.setCharacterEncoding("UTF-8");
         String driver = req.getParameter("driver");
         String route = req.getParameter("route");
         String bus = req.getParameter("bus");

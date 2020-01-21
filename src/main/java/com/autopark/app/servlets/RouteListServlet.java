@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class RouteListServlet extends HttpServlet {
 
@@ -20,7 +19,6 @@ public class RouteListServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("UTF-8");
         DatabaseWorker model = null;
         try {
             model = DatabaseWorker.getInstance();

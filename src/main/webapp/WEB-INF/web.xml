@@ -105,4 +105,25 @@
         <servlet-name>userQuery</servlet-name>
         <url-pattern>/userQuery</url-pattern>
     </servlet-mapping>
+    
+    
+    <filter>
+        <filter-name>RequestEncodingFilter</filter-name>
+        <filter-class>com.autopark.app.filters.RequestCharacterEncoding</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>RequestEncodingFilter</filter-name>
+        <url-pattern>/</url-pattern>
+    </filter-mapping>
+
+
+    <filter>
+        <filter-name>EncodingResponseFilter</filter-name>
+        <filter-class>com.autopark.app.filters.ResponseCharacterEncoding</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>EncodingResponseFilter</filter-name>
+        <url-pattern>/</url-pattern>
+    </filter-mapping>
 </web-app>

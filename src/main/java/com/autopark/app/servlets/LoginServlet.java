@@ -20,7 +20,6 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("UTF-8");
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/login.jsp");
         requestDispatcher.forward(req, resp);
     }
@@ -29,7 +28,6 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         BasicConfigurator.configure();
-        req.setCharacterEncoding("UTF-8");
         DatabaseWorker databaseWorker = null;
         try {
             databaseWorker = DatabaseWorker.getInstance();

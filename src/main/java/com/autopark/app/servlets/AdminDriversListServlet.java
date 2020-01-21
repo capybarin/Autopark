@@ -12,9 +12,7 @@ import org.apache.log4j.Logger;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class AdminDriversListServlet extends HttpServlet {
 
@@ -22,7 +20,6 @@ public class AdminDriversListServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("UTF-8");
         DatabaseWorker databaseWorker = null;
         try {
             databaseWorker = DatabaseWorker.getInstance();

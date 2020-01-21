@@ -10,6 +10,11 @@ import org.apache.log4j.Logger;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * Singleton класс для работы с БД
+ * @author Bezdushnyi Vladyslav
+ */
+
 public class DatabaseWorker {
     private static DatabaseWorker instance;
     private static final Logger log = Logger.getLogger(DatabaseWorker.class);
