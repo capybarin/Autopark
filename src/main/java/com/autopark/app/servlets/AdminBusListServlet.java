@@ -2,7 +2,6 @@ package com.autopark.app.servlets;
 
 import com.autopark.app.database.DatabaseWorker;
 import com.autopark.app.entities.Bus;
-import com.autopark.app.entities.User;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 

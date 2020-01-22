@@ -41,4 +41,15 @@ public class Work {
     public String getAccepted() {
         return accepted;
     }
+
+    @Override
+    public String toString() {
+        return "Work{" +
+                "id=" + id +
+                ", userId=" + userId +
+                ", routeId=" + routeId +
+                ", busId=" + busId +
+                ", accepted='" + accepted + '\'' +
+                '}';
+    }
 }

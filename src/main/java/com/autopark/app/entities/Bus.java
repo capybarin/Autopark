@@ -22,4 +22,13 @@ public class Bus {
     public String getActivity() {
         return activity;
     }
+
+    @Override
+    public String toString() {
+        return "Bus{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", activity='" + activity + '\'' +
+                '}';
+    }
 }

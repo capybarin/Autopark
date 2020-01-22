@@ -1,10 +1,3 @@
-<%@ page import="java.util.List" %>
-<%@ page import="com.autopark.app.entities.Work" %>
-<%@ page import="java.util.Iterator" %>
-<%@ page import="com.autopark.app.entities.User" %>
-<%@ page import="com.autopark.app.entities.Bus" %>
-<%@ page import="com.autopark.app.entities.Route" %>
-<%@ page import="com.autopark.app.database.DatabaseWorker" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
