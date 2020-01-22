@@ -24,7 +24,6 @@ public class DriverAcceptServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        log.info(session.getAttribute("currOnline"));
         String tmpCurrOnlineId = String.valueOf(session.getAttribute("currOnline"));
         int currOnlineId = Integer.parseInt(tmpCurrOnlineId);
         DatabaseWorker databaseWorker = null;
@@ -62,7 +61,7 @@ public class DriverAcceptServlet extends HttpServlet {
 
         BasicConfigurator.configure();
         String workId = req.getParameter("id");
-
+        log.info(workId);
         int id;
         try{
             id = Integer.parseInt(workId);

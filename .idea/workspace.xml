@@ -7,20 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5087e897-faa0-42bb-a4fa-2f203a431ecd" name="Default Changelist" comment="Login page added">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/filters/RequestCharacterEncoding.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/filters/ResponseCharacterEncoding.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/database/DatabaseWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/database/DatabaseWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/AddServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/AddServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/AdminBusListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/AdminBusListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/AdminDriversListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/AdminDriversListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/AdminQueryServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/AdminQueryServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/BusListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/BusListServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/DriverAcceptServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/DriverAcceptServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/ListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/ListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/RouteListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/RouteListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/userQuery.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/userQuery.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +65,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Facets" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.1603128" />
     <property name="project.structure.side.proportion" value="0.26865673" />
   </component>
@@ -295,6 +284,7 @@
       <workItem from="1579455159852" duration="1033000" />
       <workItem from="1579640445316" duration="1853000" />
       <workItem from="1579642326354" duration="35000" />
+      <workItem from="1579687214968" duration="1609000" />
     </task>
     <task id="LOCAL-00001" summary="Model class created">
       <created>1578484710726</created>
