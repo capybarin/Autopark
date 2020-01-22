@@ -28,7 +28,7 @@
                     <h5>Bus №${work.busName}</h5>
                     <h5>Accepted: ${work.accepted}</h5>
                     <form method="post" class="w3-hover-sand">
-                        <button type="submit" name="id" class="w3-btn w3-green w3-round-large w3-margin-bottom" value=${work.workId}>AcceptBtn</button>
+                        <button type="submit" name="id" class="w3-btn w3-green w3-round-large w3-margin-bottom" value=${work.workId}>Accept</button>
                     </form>
                 </li>
             </ul>
