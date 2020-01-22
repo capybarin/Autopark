@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5087e897-faa0-42bb-a4fa-2f203a431ecd" name="Default Changelist" comment="Login page added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/DriverAcceptServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/autopark/app/servlets/DriverAcceptServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/userQuery.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/userQuery.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -285,6 +284,7 @@
       <workItem from="1579640445316" duration="1853000" />
       <workItem from="1579642326354" duration="35000" />
       <workItem from="1579687214968" duration="1609000" />
+      <workItem from="1579688884589" duration="91000" />
     </task>
     <task id="LOCAL-00001" summary="Model class created">
       <created>1578484710726</created>
