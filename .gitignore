@@ -1,9 +1,0 @@
-.idea
-.idea/workspace.xml
-.idea/artifacts/Autopark_Application_war.xml
-target/Autopark Application.war
-*.class
-target/Autopark Application/WEB-INF/lib/mysql-connector-java-8.0.18.jar
-target/Autopark Application/WEB-INF/lib/protobuf-java-3.6.1.jar
-target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
-.idea/workspace.xml
