@@ -16,6 +16,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Сервлет создание заказа админом
+ * @author Bezdushnyi Vladyslav
+ */
+
 public class AdminQueryServlet extends HttpServlet {
 
     private static final Logger log = Logger.getLogger(AdminQueryServlet.class);
@@ -25,9 +30,10 @@ public class AdminQueryServlet extends HttpServlet {
 
         try {
             DatabaseWorker databaseWorker = DatabaseWorker.getInstance();
-            List<Work> works = databaseWorker.getAllWork();
+            List<Work> works = databaseWorker.getAllWork(); //Получение всех заказов
             AdminQueryOutputHelp adminQueryOutputHelp = null;
             List<AdminQueryOutputHelp> adminQueryOutputHelpArrayList = new ArrayList<>();
+            //Цикл для обработки заказов, где вместо ID полученых из БД подставляются данные
             for (Work work1: works) {
                 adminQueryOutputHelp = new AdminQueryOutputHelp(databaseWorker.getDriverNameById(work1.getId()),
                         databaseWorker.getRouteNameById(work1.getRouteId()),
@@ -47,6 +53,7 @@ public class AdminQueryServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         BasicConfigurator.configure();
+        //Создание заказа
         String driver = req.getParameter("driver");
         String route = req.getParameter("route");
         String bus = req.getParameter("bus");

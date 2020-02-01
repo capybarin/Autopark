@@ -14,6 +14,11 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ * Сервлет для вывода автобусов для админа
+ * @author Bezdushnyi Vladyslav
+ */
+
 public class AdminBusListServlet extends HttpServlet {
 
     private static final Logger log = Logger.getLogger(AdminBusListServlet.class);

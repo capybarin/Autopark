@@ -17,14 +17,20 @@ import com.autopark.app.misc.UserQueryOutputHelp;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
+/**
+ * Сервлет подтвержедния водителем заказа
+ * @author Bezdushnyi Vladyslav
+ */
+
 public class DriverAcceptServlet extends HttpServlet {
 
     private static final Logger log = Logger.getLogger(DriverAcceptServlet.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //Вывод всех не подтвержденных заказов данного водителя
         HttpSession session = req.getSession();
-        String tmpCurrOnlineId = String.valueOf(session.getAttribute("currOnline"));
+        String tmpCurrOnlineId = String.valueOf(session.getAttribute("currOnline"));//Получение из сесси ID залогиненого водителя
         int currOnlineId = Integer.parseInt(tmpCurrOnlineId);
         DatabaseWorker databaseWorker = null;
         try {
@@ -39,6 +45,7 @@ public class DriverAcceptServlet extends HttpServlet {
         } catch (SQLException e) {
             log.error(e);
         }
+        //Получение всех не подтвержденных заказов связанных с данным водителем
         List<Work> currentIdWork = new ArrayList<>();
         for (Work work: works) {
             if(work.getUserId() == currOnlineId && work.getAccepted().equals("N"))
@@ -46,6 +53,7 @@ public class DriverAcceptServlet extends HttpServlet {
         }
         UserQueryOutputHelp userQueryOutputHelp = null;
         List<UserQueryOutputHelp> userQueryOutputHelpList = new ArrayList<>();
+        //Цикл замены ID полученых из таблицы БД данными
         for (Work work:currentIdWork) {
             userQueryOutputHelp = new UserQueryOutputHelp(work.getId(), databaseWorker.getRouteNameById(work.getRouteId()),
                     databaseWorker.getBusNameById(work.getBusId()), work.getAccepted());
@@ -58,7 +66,7 @@ public class DriverAcceptServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        //Получение ID заказа и смена его статуса
         BasicConfigurator.configure();
         String workId = req.getParameter("id");
         log.info(workId);
@@ -78,6 +86,7 @@ public class DriverAcceptServlet extends HttpServlet {
             }
             UserQueryOutputHelp userQueryOutputHelp = null;
             List<UserQueryOutputHelp> userQueryOutputHelpList = new ArrayList<>();
+            //Цикл замены ID полученых из таблицы БД данными
             for (Work works:work) {
                 userQueryOutputHelp = new UserQueryOutputHelp(works.getId(), databaseWorker.getRouteNameById(works.getRouteId()),
                         databaseWorker.getBusNameById(works.getBusId()), works.getAccepted());

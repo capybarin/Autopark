@@ -1,5 +1,10 @@
 package com.autopark.app.entities;
 
+/**
+ * Модель для таблицы Route
+ * @author Bezdushnyi Vladyslav
+ */
+
 public class Route {
     private int id;
     private String name;

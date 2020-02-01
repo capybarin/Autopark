@@ -15,6 +15,11 @@ import java.io.*;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ * Сервлет логина
+ * @author Bezdushnyi Vladyslav
+ */
+
 public class LoginServlet extends HttpServlet {
     private static final Logger log = Logger.getLogger(LoginServlet.class);
 

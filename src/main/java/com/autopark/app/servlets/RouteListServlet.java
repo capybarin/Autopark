@@ -13,6 +13,11 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ * Сервлет вывода всех маршрутов
+ * @author Bezdushnyi Vladyslav
+ */
+
 public class RouteListServlet extends HttpServlet {
 
     private static final Logger log = Logger.getLogger(RouteListServlet.class);

@@ -13,6 +13,11 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ * Сервлет вывода всех пользователей
+ * @author Bezdushnyi Vladyslav
+ */
+
 public class ListServlet extends HttpServlet {
 
     private static final Logger log = Logger.getLogger(ListServlet.class);

@@ -1,5 +1,11 @@
 package com.autopark.app.misc;
 
+/**
+ * Класс предназначенный хранить все заказы,
+ * но в котором вместо ID в полях будут данные им соотвествующие
+ * @author Bezdushnyi Vladyslav
+ */
+
 public class AdminQueryOutputHelp {
     private String driverName;
     private String routeName;

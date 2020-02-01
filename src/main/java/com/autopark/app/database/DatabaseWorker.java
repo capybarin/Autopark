@@ -24,6 +24,9 @@ public class DatabaseWorker {
     private String password = "qwerty";
 
 
+    /**Метод для подключения к базе данных
+     * @throws SQLException
+     */
     private DatabaseWorker() throws SQLException {
         BasicConfigurator.configure();
         try {
@@ -38,6 +41,11 @@ public class DatabaseWorker {
         return connection;
     }
 
+    /**
+     * Метод для получения экземпляра класса
+     * @return class instance
+     * @throws SQLException
+     */
     public static DatabaseWorker getInstance() throws SQLException {
         if(instance == null){
             instance = new DatabaseWorker();
@@ -48,6 +56,11 @@ public class DatabaseWorker {
     }
 
 
+    /**
+     * Получение списка юзеров
+     * @return ArrayList<User>
+     * @throws SQLException
+     */
     public ArrayList<User> getUserList() throws SQLException {
         log.info("Retrieving user list");
         ArrayList<User> userList = new ArrayList<>();
@@ -59,6 +72,11 @@ public class DatabaseWorker {
         return userList;
     }
 
+    /**
+     * Метод для добавления юзера в БД;
+     * Используется при регистрации
+     * @param user
+     */
     public void addUser(User user){
         log.info("Creating a user");
         String sql = "insert into users (Name_, Surname, Role, Activity, Password) " +
@@ -70,8 +88,12 @@ public class DatabaseWorker {
         }
     }
 
+    /**
+     * Метод который меняет статус водителя с "free" на "busy"
+     * Используется при подтверждении водителем заказа
+     * @param id
+     */
     public void updateUserToBusy(int id){
-        //UPDATE `motorpoll`.`users` SET `Activity`='busy' WHERE `idUsers`='1';
         String sql = "UPDATE users SET Activity='busy' WHERE idUsers=" + id;
         try {
             connection.createStatement().executeUpdate(sql);
@@ -80,6 +102,11 @@ public class DatabaseWorker {
         }
     }
 
+    /**
+     * Метод для получения всех маршрутов
+     * @return ArrayList<Route>
+     * @throws SQLException
+     */
     public ArrayList<Route> getRouteList() throws SQLException {
         log.info("Retrieving route list");
         ArrayList<Route> routeList = new ArrayList<>();
@@ -90,7 +117,8 @@ public class DatabaseWorker {
         return routeList;
     }
 
-    public void addRoute(Route route){
+    //Не ипользется
+    /*(public void addRoute(Route route){
         log.info("Creating a route");
         String sql = "INSERT INTO route (Name) values ('"+route.getName()+"')";
         try {
@@ -98,8 +126,13 @@ public class DatabaseWorker {
         }catch (SQLException e){
             log.error(e);
         }
-    }
+    }*/
 
+    /**
+     * Метод для получения всех автобусов
+     * @return ArrayList<Bus>
+     * @throws SQLException
+     */
     public ArrayList<Bus> getBusList() throws SQLException{
         log.info("Retrieving bus list");
         ArrayList<Bus> busList = new ArrayList<>();
@@ -110,7 +143,8 @@ public class DatabaseWorker {
         return busList;
     }
 
-    public void addBus(Bus bus){
+    //Не используется
+    /*public void addBus(Bus bus){
         log.info("Creating a bus");
         String sql = "INSERT INTO bus (BusName, Activity) VALUES ('"+bus.getName()+"','"+bus.getActivity()+"')";
         try{
@@ -118,10 +152,14 @@ public class DatabaseWorker {
         }catch (SQLException e){
             log.error(e);
         }
-    }
+    }*/
 
+    /**
+     * Метод обновляет статус атобуса с "free" на "busy"
+     * Используется при подтверждении водителем заказа
+     * @param id
+     */
     public void updateBusToBusy(int id){
-        //UPDATE `motorpoll`.`bus` SET `Activity`='busy' WHERE `idBus`='1';
         String sql = "UPDATE bus SET Activity='busy' WHERE idBus=" + id;
         try {
             connection.createStatement().executeUpdate(sql);
@@ -130,8 +168,12 @@ public class DatabaseWorker {
         }
     }
 
+
+    /**
+     * Метод для создания нового заказа
+     * @param work
+     */
     public void addWork(Work work){
-        //INSERT INTO `motorpoll`.`work` (`Users_id`, `Route_id`, `Bus_id`, `Accepted`) VALUES ('1', '1', '1', 'N');
         log.info("Creating some work");
         String sql = "INSERT INTO work (Users_id, Route_id, Bus_id, Accepted) " +
                 "VALUES ('" + work.getUserId() + "','" + work.getRouteId() + "','" + work.getBusId() + "','" + work.getAccepted() + "')";
@@ -143,6 +185,11 @@ public class DatabaseWorker {
         }
     }
 
+    /**
+     * Метод для получения всех существующих заказов
+     * @return ArrayList<Work>
+     * @throws SQLException
+     */
     public ArrayList<Work> getAllWork() throws SQLException{
         log.info("Retrieving work list");
         ArrayList<Work> workList = new ArrayList<>();
@@ -153,8 +200,11 @@ public class DatabaseWorker {
         return workList;
     }
 
+    /**
+     * Метод используется для смены статуса подтверждения заказа с "N" (No) на "Y" (Yes)
+     * @param workId
+     */
     public void acceptWork(int workId){
-        //UPDATE `motorpoll`.`work` SET `Accepted`='Y' WHERE `idWork`='1';
         String sql = "UPDATE work SET Accepted='Y' WHERE idWork = " +workId;
         try {
             connection.createStatement().executeUpdate(sql);
@@ -163,6 +213,12 @@ public class DatabaseWorker {
         }
     }
 
+
+    /**
+     * Возвращает из БД имя водителя по его ID
+     * @param id
+     * @return Driver name
+     */
     public String getDriverNameById(int id){
         String driverName = "";
         String sql = "SELECT * FROM users WHERE idUsers = " + id;
@@ -177,6 +233,11 @@ public class DatabaseWorker {
         return driverName;
     }
 
+    /**
+     * Возвращает из БД номер автобуса по его ID
+     * @param id
+     * @return Bus name
+     */
     public String getBusNameById(int id){
         String busName = "";
         String sql = "SELECT * FROM bus WHERE idBus = " + id;
@@ -191,6 +252,11 @@ public class DatabaseWorker {
         return busName;
     }
 
+    /**
+     * Возвращает из БД название маршрута по его ID
+     * @param id
+     * @return Route name
+     */
     public String getRouteNameById(int id){
         String routeName = "";
         String sql = "SELECT * FROM route WHERE idRoute = " + id;

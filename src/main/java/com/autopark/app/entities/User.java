@@ -1,6 +1,11 @@
 package com.autopark.app.entities;
 
 
+/**
+ * Модель для таблицы Users
+ * @author Bezdushnyi Vladyslav
+ */
+
 public class User {
     private int id;
     private String name;

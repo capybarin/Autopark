@@ -1,5 +1,10 @@
 package com.autopark.app.entities;
 
+/**
+* Модель для таблицы Work
+*/
+
+
 public class Work {
     private int id;
     private int userId;

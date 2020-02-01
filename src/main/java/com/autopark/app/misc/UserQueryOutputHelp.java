@@ -1,5 +1,11 @@
 package com.autopark.app.misc;
 
+/**
+ * Класс призванный хранить заказы для водителей,
+ * но в более удобной форме где вместо ID будут данные им соотвуствующие
+ * @author Bezdushnyi Vladyslav
+ */
+
 public class UserQueryOutputHelp {
     private int workId;
     private String routeName;

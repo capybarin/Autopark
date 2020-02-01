@@ -16,6 +16,10 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ * Сервлет вывода всех автобусов
+ * @author Bezdushnyi Vladyslav
+ */
 
 public class BusListServlet extends HttpServlet {
 

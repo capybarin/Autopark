@@ -1,5 +1,10 @@
 package com.autopark.app.entities;
 
+/**
+ * Модель для таблицы Bus
+ * @author Bezdushnyi Vladyslav
+ */
+
 public class Bus {
     private int id;
     private String name;

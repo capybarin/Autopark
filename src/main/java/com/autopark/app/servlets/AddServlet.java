@@ -14,6 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
+/**
+ * Сервлет для регистрации пользователя
+ * @author Bezdushnyi Vladyslav
+ */
+
 public class AddServlet extends HttpServlet {
 
     private static final Logger log = Logger.getLogger(AddServlet.class);
